@@ -1,0 +1,32 @@
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/A_first_splash
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Variables
+
+
+
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Math
+
+https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Test_your_skills:_Math
+
+
+
+
+
+
+sb-ipzzp1178544@personal.example.com
+nn3A.oF8
+
+sb-47so0t1186433@business.example.com
+&F%Ws0%z
+
+
+ssh-keygen -t rsa -b 4096 -C yashveersoftwere06@gmail.com
+
+git config --global user.name "SveerPal"
