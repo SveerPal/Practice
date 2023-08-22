@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordian</title>
+    <style>
+        summary{
+            list-style-type: "+";
+        }
+        details[open] summary{
+            list-style-type: "-";
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="main-div">
+        <div class="accordian">
+            <h1>Heading 1</h1>
+            <p style="display: none;">I'm paragraph</p>
+        </div>
+        <div class="accordian">
+            <h1>Heading 2</h1>
+            <p style="display: none;">I'm paragraph 3</p>
+        </div>
+        <div class="accordian">
+            <h1>Heading 2</h1>
+            <p style="display: none;">I'm paragraph 3</p>
+        </div>
+    </div> -->
+    <details>
+        <!-- Our Heading is our summary -->
+        <summary>Heading</summary>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis ea voluptatibus beatae, amet nisi facere pariatur dicta quia ab! Ipsum non cumque rerum optio dolorum inventore repellendus hic explicabo nesciunt?</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis ea voluptatibus beatae, amet nisi facere pariatur dicta quia ab! Ipsum non cumque rerum optio dolorum inventore repellendus hic explicabo nesciunt?</p>
+        
+    </details>
+    <details>
+        <!-- Our Heading is our summary -->
+        <summary>Heading 2</summary>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </details>
+</body>
+<script>
+    const heading = document.querySelectorAll('.accordian h1');
+    //console.log(heading)
+    heading.forEach((element)=>{
+        element.addEventListener('click',(/*event*/)=>{
+            //let targetElement = event.target;
+            //console.log(targetElement)
+            let p = element.nextElementSibling;
+            if(p.style.display==="none"){
+                p.style.display="block";
+            }else{
+                p.style.display="none";
+            }
+        })
+    })
+</script>    
+</html>
+<!-- Second Approch usin pure html -->

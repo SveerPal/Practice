@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Number</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Welcome to the Game</h1>
+        <p>Total Attempt <span class="attempt">0</span></p>
+        <!-- Display Our Message -->
+        <p class="message">Message: </p>
+        <form onsubmit="playGame(event)">
+            <input class="userInput" type="number" required />
+            <button>Check Ans</button>
+        </form>
+    </div>
+</body>
+<script>
+    //add level easy :0-10,medium 20 -39 and hard 40+
+    // add css
+
+    let computerGuess = Math.floor(Math.random() * 11)
+    console.log(computerGuess)
+    let message = document.querySelector('.message')
+    let userInput = document.querySelector('.userInput')
+    let attempt = document.querySelector('.attempt')
+
+
+    const playGame = (event) => {
+        event.preventDefault();
+        //console.log(event.target)
+        //console.log("Inside the game")
+        if (computerGuess == userInput.value) {
+            message.innerHTML = 'Congratulations! You Won!';
+            celebrate();
+            setTimeout(function () {
+                
+                //window.location.reload();
+                computerGuess = Math.floor(Math.random() * 11)
+                message.innerHTML = 'Message';
+                userInput.value = "";
+                attempt.innerHTML = 0;
+            }, 2000)
+        } else if (computerGuess > userInput.value) {
+            message.innerHTML = 'Guess a Greater Number';
+        } else if (computerGuess < userInput.value) {
+            message.innerHTML = 'Guess a Smaller Number';
+        }
+        attempt.innerHTML = Number(attempt.innerHTML) + 1;
+    }
+
+    const celebrate = () => {
+        var defaults = {
+            spread: 360,
+            ticks: 50,
+            gravity: 0,
+            decay: 0.94,
+            startVelocity: 30,
+            shapes: ['star'],
+            colors: ['FFE400', 'FFBD00', 'E89400', 'FFCA6C', 'FDFFB8']
+        };
+
+        function shoot() {
+            confetti({
+                ...defaults,
+                particleCount: 40,
+                scalar: 1.2,
+                shapes: ['star']
+            });
+
+            confetti({
+                ...defaults,
+                particleCount: 10,
+                scalar: 0.75,
+                shapes: ['circle']
+            });
+        }
+
+        setTimeout(shoot, 0);
+        setTimeout(shoot, 100);
+        setTimeout(shoot, 200);
+    }
+</script>
+
+</html>
