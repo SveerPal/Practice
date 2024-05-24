@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Element in Array</title>
+</head>
+<body>
+    <input type="text" id="position" placeholder="Enter new position"/>
+    <input type="text" id="newel" placeholder="Enter new element"/>
+
+    <button onclick="insertEl()">Insert</button>
+    <script>
+        // let data =[12,45,20,33,65,56,3,23,54,27,45,78]
+        // let newEl=99
+        // let position =2
+        // console.log(data)
+        // for(let i=data.length-1;i>=0;i--){
+        //     //document.write(`${data[i]}<br>`)
+        //     if(i>=position){
+        //         data[i+1]=data[i]
+        //         if(i==position){
+        //             data[i]=newEl
+        //         }
+        //     }
+        // }
+        // console.log(data)
+
+        function insertEl(){
+            let data =[12,45,20,33,65,56,3,23,54,27,45,78]
+            let newEl=document.querySelector("#newel").value;
+            let position =document.querySelector("#position").value;
+
+            console.log(data)
+            for(let i=data.length-1;i>=0;i--){
+                
+                if(i>=position){
+                    data[i+1]=data[i]
+                    if(i==position){
+                        data[i]=newEl
+                    }
+                }
+            }
+            console.log(data)
+        }
+        let item =[12,45,20,33,65,56,3,23,54,27,45,78]
+        item.splice(2,0,2000)
+        console.log(item)
+    </script>
+</body>
+</html>

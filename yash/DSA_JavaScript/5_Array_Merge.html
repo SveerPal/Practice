@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Array</title>
+</head>
+<body>
+    
+    <script>
+        let data =[12,45,20,33,27,45,78]
+        let data2 =[100,200,333,247,4,78]
+        let data3=[]
+        
+        for (let i=0; i<data.length;i++){
+            data3[i]=data[i]
+            
+        }
+        for (let i=0; i<data2.length;i++){
+            data3[data.length+i]=data2[i]            
+        }
+        console.log(data3)
+
+        //By spread oprator  
+       let data4=[...data,...data2]
+       console.log(data4)
+    </script>
+</body>
+</html>

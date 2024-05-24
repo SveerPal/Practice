@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Element in Array Usin Linear </title>
+</head>
+<body>
+    <input type="text" id="searchEl" placeholder="Enter position"/>
+   
+    <button onclick="searchElement()">Search</button>
+    <script>
+        // let data =[12,45,20,33,27,45,78]
+        // let item=27
+        //let index=undefined
+        // console.log(data)
+        // for (let i=0; i<data.length;i++){
+        //     if(data[i]===item){
+        //         index=i
+        //         break;
+        //     }
+        //     //items[i]=items[i+1]
+            
+        // }
+        // //console.log(index)
+        // //data.indexOf(item) 
+        // data.splice(index,1)
+        
+        // console.log(data)
+
+        function searchElement(){
+            let data =[12,45,20,33,65,56,3,23,54,27,45,78]
+            let index=undefined
+            let searchEl =parseInt(document.querySelector("#searchEl").value);
+
+            console.log(data)
+            for(let i=0; i<data.length;i++){
+                if(data[i]===searchEl){
+                    index=i
+                    break;
+                }            
+            } 
+            console.log(index)           
+            data.splice(index,1)
+            console.log(data)
+        }
+
+    </script>
+</body>
+</html>
