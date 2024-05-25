@@ -5,8 +5,13 @@
 <!--<Home2 />-->
 <!--<TwoWayBinding />-->
 <!--<GetInputFieldValue />
-<GetCheckboxRadioFieldValue />-->
+<GetCheckboxRadioFieldValue />
 <IfElseCondition />
+<ForLoop />
+<PassDataToChildComponent />
+<HtmlBinding />
+<ClassBinding />-->
+<Props />
 </template>
 
 <script>
@@ -17,6 +22,11 @@ import TwoWayBinding from './components/TwoWayBinding.vue'
 import GetInputFieldValue from './components/GetInputFieldValue.vue'
 import GetCheckboxRadioFieldValue from './components/GetCheckboxRadioFieldValue.vue'
 import IfElseCondition from './components/IfElseCondition.vue'
+import ForLoop from './components/ForLoop.vue'
+import PassDataToChildComponent from './components/PassDataToChildComponent.vue'
+import HtmlBinding from './components/HtmlBinding.vue'
+import ClassBinding from './components/ClassBinding.vue'
+import Props from './components/Props.vue'
 
 export default {
     name: 'App',
@@ -28,7 +38,11 @@ export default {
         GetInputFieldValue,
         GetCheckboxRadioFieldValue,
         IfElseCondition,
-
+        ForLoop,
+        PassDataToChildComponent,
+        HtmlBinding,
+        ClassBinding,
+        Props,
     }
 }
 </script>
