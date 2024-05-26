@@ -10,8 +10,16 @@
 <ForLoop />
 <PassDataToChildComponent />
 <HtmlBinding />
-<ClassBinding />-->
+<ClassBinding />
 <Props />
+<ChildToParentPassData />
+<Ref />
+<SimpleForm />
+<SimpleForm2 />
+<FormValidation/>
+<Modifiers />
+<NonProps />-->
+<ComputedProperty />
 </template>
 
 <script>
@@ -27,6 +35,14 @@ import PassDataToChildComponent from './components/PassDataToChildComponent.vue'
 import HtmlBinding from './components/HtmlBinding.vue'
 import ClassBinding from './components/ClassBinding.vue'
 import Props from './components/Props.vue'
+import ChildToParentPassData from './components/ChildToParentPassData.vue'
+import Ref from './components/Ref.vue'
+import SimpleForm from './components/SimpleForm.vue'
+import SimpleForm2 from './components/SimpleForm2.vue'
+import FormValidation from './components/FormValidation.vue'
+import Modifiers from './components/Modifiers.vue'
+import NonProps from './components/NonProps.vue'
+import ComputedProperty from './components/ComputedProperty.vue'
 
 export default {
     name: 'App',
@@ -43,6 +59,14 @@ export default {
         HtmlBinding,
         ClassBinding,
         Props,
+        ChildToParentPassData,
+        Ref,
+        SimpleForm,
+        SimpleForm2,
+        FormValidation,
+        Modifiers,
+        NonProps,
+        ComputedProperty,
     }
 }
 </script>

@@ -8,8 +8,8 @@ export default {
     name: "Teacher",
    
     props: {
-        name: Object,
-        getDataForRepeat: Function,
+        name: String,
+       
     }
 
 }

@@ -7,7 +7,7 @@
 export default {
     name: "Student",   
     props: {
-        name: Object,       
+        name: String,       
     }
 
 }
