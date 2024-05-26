@@ -18,8 +18,11 @@
 <SimpleForm2 />
 <FormValidation/>
 <Modifiers />
-<NonProps />-->
+<NonProps />
 <ComputedProperty />
+<Watchers />
+<Slots />-->
+<MultipleSlots />
 </template>
 
 <script>
@@ -43,6 +46,9 @@ import FormValidation from './components/FormValidation.vue'
 import Modifiers from './components/Modifiers.vue'
 import NonProps from './components/NonProps.vue'
 import ComputedProperty from './components/ComputedProperty.vue'
+import Watchers from './components/Watchers.vue'
+import Slots from './components/Slots.vue'
+import MultipleSlots from './components/MultipleSlots.vue'
 
 export default {
     name: 'App',
@@ -67,6 +73,9 @@ export default {
         Modifiers,
         NonProps,
         ComputedProperty,
+        Watchers,
+        Slots,
+        MultipleSlots,
     }
 }
 </script>
