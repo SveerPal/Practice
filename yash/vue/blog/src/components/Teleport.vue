@@ -1,5 +1,5 @@
 <template>
-<h1>################ Dynamic Component ############</h1>
+<h1>################ Teleport Component ############</h1>
 <button @click="tab='Java'">Load Java</button>
 <button @click="tab='Php'">Load Php</button>
 <button @click="tab='Node'">Load Node</button>
@@ -14,7 +14,7 @@ import Php from './Php.vue';
 import Node from './Node.vue';
 import Java from './Java.vue';
 export default {
-    name: "DynamicComponent",
+    name: "Teleport",
     components: {
         Php,
         Node,

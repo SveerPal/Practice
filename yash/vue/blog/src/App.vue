@@ -22,8 +22,9 @@
 <ComputedProperty />
 <Watchers />
 <Slots />
-<MultipleSlots />-->
-<DynamicComponent />
+<MultipleSlots />
+<DynamicComponent />-->
+<Teleport />
 </template>
 
 <script>
@@ -50,6 +51,8 @@ import ComputedProperty from './components/ComputedProperty.vue'
 import Watchers from './components/Watchers.vue'
 import Slots from './components/Slots.vue'
 import MultipleSlots from './components/MultipleSlots.vue'
+import DynamicComponent from './components/DynamicComponent.vue'
+import Teleport from './components/Teleport.vue'
 
 export default {
     name: 'App',
@@ -78,6 +81,7 @@ export default {
         Slots,
         MultipleSlots,
         DynamicComponent,
+        Teleport,
     }
 }
 </script>
