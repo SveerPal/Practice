@@ -21,8 +21,9 @@
 <NonProps />
 <ComputedProperty />
 <Watchers />
-<Slots />-->
-<MultipleSlots />
+<Slots />
+<MultipleSlots />-->
+<DynamicComponent />
 </template>
 
 <script>
@@ -76,6 +77,7 @@ export default {
         Watchers,
         Slots,
         MultipleSlots,
+        DynamicComponent,
     }
 }
 </script>
