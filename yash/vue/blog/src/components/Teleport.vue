@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import Php from './Php.vue';
-import Node from './Node.vue';
-import Java from './Java.vue';
+// import Php from './Php.vue';
+// import Node from './Node.vue';
+// import Java from './Java.vue';
 export default {
     name: "Teleport",
     components: {
