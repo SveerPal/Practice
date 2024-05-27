@@ -24,7 +24,7 @@
 <Slots />
 <MultipleSlots />
 <DynamicComponent />-->
-<Teleport />
+<TeleportComponent />
 </template>
 
 <script>
@@ -52,7 +52,7 @@ import Watchers from './components/Watchers.vue'
 import Slots from './components/Slots.vue'
 import MultipleSlots from './components/MultipleSlots.vue'
 import DynamicComponent from './components/DynamicComponent.vue'
-import Teleport from './components/Teleport.vue'
+import TeleportComponent from './components/TeleportComponent.vue'
 
 export default {
     name: 'App',
@@ -81,7 +81,7 @@ export default {
         Slots,
         MultipleSlots,
         DynamicComponent,
-        Teleport,
+        TeleportComponent,
     }
 }
 </script>
