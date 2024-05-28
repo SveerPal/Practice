@@ -10,14 +10,18 @@
  import FooterTeleportComponent from './FooterTeleportComponent.vue';
 export default {
     name: "TeleportComponent",
+    beforeCreate(){
+        alert("Before Create Component")
+    },
+    created(){
+        alert("Created Component")
+    },
     components: {
         FooterTeleportComponent,
     
     },
     data() {
-        return {
-            tab: 'java',
-        }
+       console.log("ddddddd")
     },
 
 }
