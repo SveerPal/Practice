@@ -1,5 +1,5 @@
 <template>
-<h1>################ Teleport Component ############</h1>
+<h1>################ Life Cycle Method ############</h1>
 
 <teleport to="#footerteleport">
 <FooterTeleportComponent />
