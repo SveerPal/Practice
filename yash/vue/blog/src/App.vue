@@ -24,8 +24,11 @@
 <Slots />
 <MultipleSlots />
 <DynamicComponent />
-<TeleportComponent />-->
+<TeleportComponent />
 <LifeCycleMethod />
+<LifeCycleMethod2 />
+<LifeCycleMethod3 />-->
+<LifeCycleMethod4 />
 </template>
 
 <script>
@@ -55,6 +58,9 @@ import MultipleSlots from './components/MultipleSlots.vue'
 import DynamicComponent from './components/DynamicComponent.vue'
 import TeleportComponent from './components/TeleportComponent.vue'
 import LifeCycleMethod from './components/LifeCycleMethod.vue'
+import LifeCycleMethod2 from './components/LifeCycleMethod2.vue'
+import LifeCycleMethod3 from './components/LifeCycleMethod3.vue'
+import LifeCycleMethod4 from './components/LifeCycleMethod4.vue'
 
 export default {
     name: 'App',
@@ -85,6 +91,9 @@ export default {
         DynamicComponent,
         TeleportComponent,
         LifeCycleMethod,
+        LifeCycleMethod2,
+        LifeCycleMethod3,
+        LifeCycleMethod4,
     }
 }
 </script>

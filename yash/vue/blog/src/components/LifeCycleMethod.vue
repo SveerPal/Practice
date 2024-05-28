@@ -1,27 +1,30 @@
 <template>
 <h1>################ Life Cycle Method ############</h1>
 
-<teleport to="#footerteleport">
-<FooterTeleportComponent />
-</teleport>
+<h3>Before Created and Created </h3>
+<p>{{name}}</p>
 </template>
 
 <script>
- import FooterTeleportComponent from './FooterTeleportComponent.vue';
+ 
 export default {
-    name: "TeleportComponent",
+    name: "LifeCycleMethod",
     beforeCreate(){
+        this.name="Yashvir"
         alert("Before Create Component")
     },
     created(){
+        this.name="Yashvir Pal"
         alert("Created Component")
     },
-    components: {
-        FooterTeleportComponent,
     
-    },
     data() {
-       console.log("ddddddd")
+       console.log("Created")
+       
+       return{
+          
+            name:"Yash"
+       }
     },
 
 }
