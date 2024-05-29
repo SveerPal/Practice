@@ -1,8 +1,12 @@
 <template>
-<img alt="Vue logo" src="./assets/logo.png">
+<img alt="Vue logo" src="./assets/logo.png"><br/>
+<router-link to="/">Home</router-link><br/>
+<router-link to="/login">Login</router-link><br/>
+<router-link to="/profile">Profile</router-link><br/>
+<router-view></router-view>
 <!-- <HelloWorld msg="Welcome to Coden skills" />-->
-<!-- <Home />-->
-<!--<Home2 />-->
+ <!--<Home />
+<Home2 />-->
 <!--<TwoWayBinding />-->
 <!--<GetInputFieldValue />
 <GetCheckboxRadioFieldValue />
@@ -27,8 +31,8 @@
 <TeleportComponent />
 <LifeCycleMethod />
 <LifeCycleMethod2 />
-<LifeCycleMethod3 />-->
-<LifeCycleMethod4 />
+<LifeCycleMethod3 />
+<LifeCycleMethod4 />-->
 </template>
 
 <script>
