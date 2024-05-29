@@ -1,17 +1,21 @@
 <template>
 <img alt="Vue logo" src="./assets/logo.png"><br/>
-<router-link to="/">Home</router-link><br/>
+<!--<router-link to="/">Home</router-link><br/>
 <router-link to="/login">Login</router-link><br/>
 <router-link to="/profile/yash">Yash's Profile</router-link><br/>
 <router-link to="/profile/akhil">Akhil's Profile</router-link><br/>
 <router-link to="/profile/prince">Prince's Profile</router-link><br/>
 <router-link to="/wrongurl">404 </router-link><br/>
-<router-view></router-view>
-<!-- <HelloWorld msg="Welcome to Coden skills" />-->
- <!--<Home />
-<Home2 />-->
-<!--<TwoWayBinding />-->
-<!--<GetInputFieldValue />
+<router-view></router-view> -->
+
+
+
+
+<!-- <HelloWorld msg="Welcome to Coden skills" />
+<Home />
+<Home2 />
+<TwoWayBinding />
+<GetInputFieldValue />
 <GetCheckboxRadioFieldValue />
 <IfElseCondition />
 <ForLoop />
@@ -35,7 +39,10 @@
 <LifeCycleMethod />
 <LifeCycleMethod2 />
 <LifeCycleMethod3 />
-<LifeCycleMethod4 />-->
+<LifeCycleMethod4 />
+<APICall />
+<APICall2 />-->
+<APICall3 />
 </template>
 
 <script>
@@ -68,6 +75,9 @@ import LifeCycleMethod from './components/LifeCycleMethod.vue'
 import LifeCycleMethod2 from './components/LifeCycleMethod2.vue'
 import LifeCycleMethod3 from './components/LifeCycleMethod3.vue'
 import LifeCycleMethod4 from './components/LifeCycleMethod4.vue'
+import APICall from './components/APICall.vue'
+import APICall2 from './components/APICall2.vue'
+import APICall3 from './components/APICall3.vue'
 
 export default {
     name: 'App',
@@ -101,6 +111,9 @@ export default {
         LifeCycleMethod2,
         LifeCycleMethod3,
         LifeCycleMethod4,
+        APICall,
+        APICall2,
+        APICall3,
     }
 }
 </script>
