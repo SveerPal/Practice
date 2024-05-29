@@ -2,7 +2,10 @@
 <img alt="Vue logo" src="./assets/logo.png"><br/>
 <router-link to="/">Home</router-link><br/>
 <router-link to="/login">Login</router-link><br/>
-<router-link to="/profile">Profile</router-link><br/>
+<router-link to="/profile/yash">Yash's Profile</router-link><br/>
+<router-link to="/profile/akhil">Akhil's Profile</router-link><br/>
+<router-link to="/profile/prince">Prince's Profile</router-link><br/>
+<router-link to="/wrongurl">404 </router-link><br/>
 <router-view></router-view>
 <!-- <HelloWorld msg="Welcome to Coden skills" />-->
  <!--<Home />
