@@ -1,11 +1,11 @@
 <template>
 <div class="container">
-    <h1 class="">Sign Up</h1>
-    <input type="text" name="name" placeholder="Name" v-model="name" />
+    <h1 class="">Log In</h1>
+    
     <input type="email" name="email" placeholder="Email" v-model="email" />
     <input type="password" name="password" placeholder="Password" v-model="password" />
-    <button v-on:click="signUp()" class="bg-orange text-white">Sign Up</button>
-    <a href="/login">Log In</a>
+    <button v-on:click="logIn()" class="bg-orange text-white">Log In</button>
+    <a href="/signup">Sign Up</a>
 </div>
 </template>
 
@@ -13,27 +13,25 @@
 import axios from 'axios';
 
 export default {
-    name: 'Signup',
+    name: 'Login',
     data() {
         return {
-            name: "",
+            
             email: "",
             password: ""
         }
     },
     methods: {
-        async signUp() {
-          console.log(this.name,this.email,this.password);
-            let result= await axios.post("http://localhost:3000/users",{
-               name: this.name,
-               email: this.email,
-               password: this.password
-            });
+        async logIn() {
+          //console.log(this.email,this.password);
+            let result= await axios.get(`http://localhost:3000/users?email=${this.email}&password=${this.password}`
+              
+            );
             console.log(result)
-            if(result.status==201){
+            if(result.status==200 && result.data.length>0){
               //alert("ffff")
             
-              localStorage.setItem("user-info",JSON.stringify(result.data))
+              localStorage.setItem("user-info",JSON.stringify(result.data[0]))
               this.$router.push({name:"Home"})
             }  
         }
