@@ -15,6 +15,10 @@ npm i json-server
 npm i axios
 npm i vue-router@next
 
+	make routes.js file in src folder
+	import in main.js and use in use()
+	remove template from app.vue file 
+	call router in app.vue file
 ```
 npm install
 ```
