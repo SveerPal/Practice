@@ -1,15 +1,23 @@
 <template>
+<Header/>
 <div class="container">
     <h1 class="">Welcome to Home</h1>
    
 </div>
+<Footer/>
 </template>
 
 <script>
 import axios from 'axios';
+import Header from './Header.vue';
+import Footer from './Footer.vue';
 
 export default {
     name: 'Home',
+    components:{
+        Header,
+        Footer,
+    },
     mounted(){
       let user = localStorage.getItem("user-info")
       //console.log(user)
@@ -32,7 +40,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
-<style scoped>
+<!--<style scoped>
 .container {
     display: flex;
     justify-content: center;
@@ -73,4 +81,4 @@ button {
 .text-orange {
     color: #ff6c00
 }
-</style>
+</style>-->
