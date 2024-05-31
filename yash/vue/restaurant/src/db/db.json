@@ -27,14 +27,14 @@
   ],
   "restaurants": [
     {
-      "id": 1,
-      "name": "KFC",
+      "name": "KFCc",
+      "email": "kfc@codenskills.com",
+      "phone": "123214352",
       "address": "Sector 22 Noida",
-      "phone": 123214352,
-      "email": "kfc@codenskills.com"
+      "id": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Domino",
       "address": "Sector 12 Noida",
       "phone": 33333333333,
@@ -48,11 +48,11 @@
       "address": "Noida Sector 26"
     },
     {
-      "id": "5272",
       "name": "King Rolls",
       "email": "rolls@codenskills.com",
-      "phone": "2414122",
-      "address": "Sector 18 Noida"
+      "phone": "2414122444",
+      "address": "Sector 18 Noida",
+      "id": "5272"
     }
   ]
 }

@@ -1,7 +1,7 @@
 <template>
 <Header />
 <div class="container">
-    <h1 class="">Hello {{name}}, Welcome to Home Page</h1>
+    <h1 class="">Hello {{name}}, Welcome to Restaurents</h1>
     <table border="1">
         <thead>
             <tr>
@@ -22,7 +22,8 @@
                 <td>{{item.address}}</td>
                 <td>
                     <router-link :to="'/update-restaurant/'+item.id">Edit</router-link>&nbsp;
-                    <router-link :to="'/delete-restaurant/'+item.id">Delete</router-link>
+
+                    <a v-on:click="deleteRestaurant(item.id)">Delete</a>
                 </td>
             </tr>
         </tbody>
@@ -48,37 +49,46 @@ export default {
             restaurants: [],
         }
     },
-    async mounted() {
-        let user = localStorage.getItem("user-info")
-        // console.log(user)
-        this.name = JSON.parse(user).name
-        if (!user) {
-            this.$router.push({
-                name: "Signup"
-            })
-        };
-        let result = await axios.get("http://localhost:3000/restaurants");
-        this.restaurants = result.data;
+    mounted() {
 
+        this.restaurantList()
     },
     methods: {
+        async deleteRestaurant(id) {
 
+            let result = await axios.delete(`http://localhost:3000/restaurants/${id}`)
+            if (result.status == 200) {
+                this.restaurantList()
+            }
+        },
+        async restaurantList() {
+            let user = localStorage.getItem("user-info")
+            // console.log(user)
+            this.name = JSON.parse(user).name
+            if (!user) {
+                this.$router.push({
+                    name: "Signup"
+                })
+            };
+            let result = await axios.get("http://localhost:3000/restaurants");
+            this.restaurants = result.data;
+        }
     }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
-
-
 <style scoped>
-table{
-    width:100%;
+table {
+    width: 100%;
 }
-td{
-    
-    height:40px;
+
+td {
+
+    height: 40px;
 }
+
 /*.container {
     display: flex;
     justify-content: center;

@@ -7,7 +7,7 @@
         <input type="email" name="email" placeholder="Email" v-model="restaurants.email" />
         <input type="text" name="phone" placeholder="Phone" v-model="restaurants.phone" />
         <input type="text" name="address" placeholder="Address" v-model="restaurants.address" />
-        <button type="button" class="bg-orange text-white" v-on:click="addRestaurant">Update Restaurant</button>
+        <button type="button" class="bg-orange text-white" v-on:click="updateRestaurant">Update Restaurant</button>
     </form>
     <span>{{message}}</span>
 </div>
@@ -44,21 +44,20 @@ export default {
             })
         };
         //console.log(this.$route.params.id) // id define in route.js file
-        let result = await axios.get(`http://localhost:3000/restaurants?id=${this.$route.params.id}` );
-       // console.log(result.data[0]);
-        this.restaurants = result.data[0];
+        let result = await axios.get(`http://localhost:3000/restaurants/${this.$route.params.id}` );       
+        this.restaurants = result.data;
 
     },
     methods: {
         async updateRestaurant(){
-              let result = await axios.post("http://localhost:3000/restaurants", {
+              let result = await axios.put(`http://localhost:3000/restaurants/${this.$route.params.id}`, {
                 name: this.restaurants.name,
                 email: this.restaurants.email,
                 phone: this.restaurants.phone,
                 address: this.restaurants.address,
             });
            // console.log(result)
-            if (result.status==201) {
+            if (result.status==200) {
                 this.message="Restaurant Update Successfully";
                 this.$router.push({name:"Home"})
             }
