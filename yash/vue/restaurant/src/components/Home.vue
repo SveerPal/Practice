@@ -1,10 +1,29 @@
 <template>
-<Header/>
+<Header />
 <div class="container">
-    <h1 class="">Welcome to Home</h1>
-   
+    <h1 class="">Hello {{name}}, Welcome to Home Page</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="item in restaurants" :key="item.id">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.address}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-<Footer/>
+<Footer />
 </template>
 
 <script>
@@ -14,34 +33,48 @@ import Footer from './Footer.vue';
 
 export default {
     name: 'Home',
-    components:{
+    components: {
         Header,
         Footer,
-    },
-    mounted(){
-      let user = localStorage.getItem("user-info")
-      //console.log(user)
-      if(!user){
-        this.$router.push({name:"Signup"})
-      }
     },
     data() {
         return {
             name: "",
-            email: "",
-            password: ""
+            restaurants: [],
         }
     },
+    async mounted() {
+        let user = localStorage.getItem("user-info")
+        // console.log(user)
+        this.name = JSON.parse(user).name
+        if (!user) {
+            this.$router.push({
+                name: "Signup"
+            })
+        };
+        let result = await axios.get("http://localhost:3000/restaurant");
+        this.restaurants = result.data;
+
+    },
     methods: {
-        
+
     }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
-<!--<style scoped>
-.container {
+
+
+<style scoped>
+table{
+    width:100%;
+}
+td{
+    
+    height:40px;
+}
+/*.container {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -80,5 +113,5 @@ button {
 
 .text-orange {
     color: #ff6c00
-}
-</style>-->
+}*/
+</style>

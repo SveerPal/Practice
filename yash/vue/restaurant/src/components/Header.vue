@@ -1,10 +1,11 @@
 <template>
 <div class="nav">
-    <a href="/">Home</a>
-    <a href="/">Add Restaurent</a>
-    <a href="/">Update Restaurent</a>
-    <a v-on:click="logout" href="javascript:void(0)">Logout</a>
     
+    <router-link to="/">Home</router-link>
+    <router-link to="/add-restaurant">Add Restaurent</router-link>
+    <router-link to="/update-restaurant">Update Restaurent</router-link>
+    <a v-on:click="logout" href="javascript:void(0)">Logout</a>
+
 </div>
 </template>
 
@@ -15,40 +16,42 @@ export default {
     name: 'Header',
     data() {
         return {
-            
+
             email: "",
             password: ""
         }
     },
     methods: {
-        logout(){
+        logout() {
             //localStorage.clear()
             localStorage.removeItem("user-info")
-            this.$router.push({name:"Login"})
+            this.$router.push({
+                name: "Login"
+            })
         }
     },
-    
+
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style scoped>
-body {
-  margin: 0px;
-}
+
+
 .nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  background: black;
-  padding: 20px 0px;
-   margin:0px;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background: black;
+    padding: 20px 0px;
+    margin: 0px;
+
 }
+
 .nav a {
-    color:#f69202;
-    text-decoration:none;
+    color: #f69202;
+    text-decoration: none;
 }
 </style>

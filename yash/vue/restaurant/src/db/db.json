@@ -24,5 +24,21 @@
       "email": "peter@codenskills.com",
       "password": "12345"
     }
+  ],
+  "restaurant": [
+    {
+      "id":1,
+      "name":"KFC",
+      "Address":"Sector 22 Noida",
+      "phone":123214352,
+      "email":"kfc@codenskills.com"
+    },
+    {
+      "id":2,
+      "name":"Domino",
+      "Address":"Sector 12 Noida",
+      "phone":33333333333,
+      "email":"domino@codenskills.com"
+    }
   ]
 }
