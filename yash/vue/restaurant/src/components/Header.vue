@@ -3,7 +3,8 @@
     
     <router-link to="/">Home</router-link>
     <router-link to="/add-restaurant">Add Restaurent</router-link>
-    <router-link to="/update-restaurant">Update Restaurent</router-link>
+    <router-link to="/">About</router-link>
+    <router-link to="/">Contact</router-link>
     <a v-on:click="logout" href="javascript:void(0)">Logout</a>
 
 </div>

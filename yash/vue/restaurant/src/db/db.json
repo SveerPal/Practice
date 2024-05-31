@@ -25,20 +25,34 @@
       "password": "12345"
     }
   ],
-  "restaurant": [
+  "restaurants": [
     {
-      "id":1,
-      "name":"KFC",
-      "Address":"Sector 22 Noida",
-      "phone":123214352,
-      "email":"kfc@codenskills.com"
+      "id": 1,
+      "name": "KFC",
+      "address": "Sector 22 Noida",
+      "phone": 123214352,
+      "email": "kfc@codenskills.com"
     },
     {
-      "id":2,
-      "name":"Domino",
-      "Address":"Sector 12 Noida",
-      "phone":33333333333,
-      "email":"domino@codenskills.com"
+      "id": 2,
+      "name": "Domino",
+      "address": "Sector 12 Noida",
+      "phone": 33333333333,
+      "email": "domino@codenskills.com"
+    },
+    {
+      "id": "a650",
+      "name": "Ba Bista",
+      "email": "babista@codenskill.com",
+      "phone": "142353",
+      "address": "Noida Sector 26"
+    },
+    {
+      "id": "5272",
+      "name": "King Rolls",
+      "email": "rolls@codenskills.com",
+      "phone": "2414122",
+      "address": "Sector 18 Noida"
     }
   ]
 }

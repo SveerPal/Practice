@@ -10,6 +10,7 @@
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Address</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,10 @@
                 <td>{{item.email}}</td>
                 <td>{{item.phone}}</td>
                 <td>{{item.address}}</td>
+                <td>
+                    <router-link :to="'/update-restaurant/'+item.id">Edit</router-link>&nbsp;
+                    <router-link :to="'/delete-restaurant/'+item.id">Delete</router-link>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -52,7 +57,7 @@ export default {
                 name: "Signup"
             })
         };
-        let result = await axios.get("http://localhost:3000/restaurant");
+        let result = await axios.get("http://localhost:3000/restaurants");
         this.restaurants = result.data;
 
     },

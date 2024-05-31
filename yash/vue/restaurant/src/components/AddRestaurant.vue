@@ -3,12 +3,13 @@
 <div class="">
     <h1 class="">Add Restaurant</h1>
     <form>
-        <input type="text" name="name" placholder="Name" v-model="restaurants.name" />
-        <input type="email" name="email" placholder="Email" v-model="restaurants.email" />
-        <input type="text" name="phone" placholder="Phone" v-model="restaurants.phone" />
-        <input type="text" name="address" placholder="Address" v-model="restaurants.address" />
-        <button type="button" v-on:click="addRestaurant">Add Restaurant</button>
+        <input type="text" name="name" placeholder="Name" v-model="restaurants.name" />
+        <input type="email" name="email" placeholder="Email" v-model="restaurants.email" />
+        <input type="text" name="phone" placeholder="Phone" v-model="restaurants.phone" />
+        <input type="text" name="address" placeholder="Address" v-model="restaurants.address" />
+        <button type="button" class="bg-orange text-white" v-on:click="addRestaurant">Add Restaurant</button>
     </form>
+    <span>{{message}}</span>
 </div>
 <Footer />
 </template>
@@ -30,12 +31,24 @@ export default {
                 email: "",
                 phone: "",
                 address: "",
-            }
+            },
+            message:"",
         }
     },
     methods: {
-        addRestaurant() {
-            alert("ddd");
+        async addRestaurant() {
+            //console.log(this.restaurants)
+            let result = await axios.post("http://localhost:3000/restaurants", {
+                name: this.restaurants.name,
+                email: this.restaurants.email,
+                phone: this.restaurants.phone,
+                address: this.restaurants.address,
+            });
+           // console.log(result)
+            if (result.status==201) {
+                this.message="Restaurant Added Successfully";
+                this.$router.push({name:"Home"})
+            }
         }
     },
 
@@ -73,5 +86,17 @@ button {
     border-radius: 8px;
     box-shadow: none;
     width: 150px;
+}
+
+.bg-orange {
+    background: #f69202;
+}
+
+.text-white {
+    color: #fff
+}
+
+.text-orange {
+    color: #ff6c00
 }
 </style>
