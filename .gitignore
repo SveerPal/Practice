@@ -1,9 +1,8 @@
 .DS_Store
-yash/vue/blog/node_modules
-yash/vue/blog/dist
+yash/vue/practice/node_modules
+yash/vue/practice/dist
 
-yash/vue/restaurant/node_modules
-yash/vue/restaurant/dist
+
 
 # local env files
 .env.local

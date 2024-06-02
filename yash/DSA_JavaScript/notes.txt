@@ -1,0 +1,3 @@
+What is premative and non premative data
+    premative data=string ,int ,float ,char
+    non premative data=array ,object,recurssion 
