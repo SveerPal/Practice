@@ -20,9 +20,12 @@
         Recursion(0)
 
         function Factorial(f){
-
+            if(f==1){
+                return 1;
+            }
+            return f*Factorial(f-1)
         }
-        Factorial(5)
+        console.log(Factorial(5))
 
     </script>
 </body>
