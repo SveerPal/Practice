@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sorting</title>
+</head>
+
+<body>
+    <h1>Array Sorting</h1>
+    <script>
+        let data = [12, 45, 20, 33, 27,  78]
+
+        for (i = 0; i < data.length; i++) {
+            for (j = 0; j < data.length; j++) {
+                document.write(`<p>${data}</p>`)
+                if (data[j] > data[j + 1]) {
+                    let temp = data[j]
+                    data[j] = data[j + 1]
+                    data[j + 1] = temp
+                }
+            }
+        }
+        console.log(data3)
+
+    </script>
+</body>
+
+</html>
