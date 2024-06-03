@@ -1,3 +1,8 @@
 What is premative and non premative data
     premative data=string ,int ,float ,char
-    non premative data=array ,object,recurssion 
+    non premative data=array ,object,recurssion  
+time complexity
+    time complexity is mainly calculated by counting the number of step to finish the execution.
+space complexity
+    space complexity is the amount of space required to solve  problem 
+    space complexity =auxiliary space +input size             
