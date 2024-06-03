@@ -8,4 +8,9 @@ space complexity
     space complexity =auxiliary space +input size
 
  Recursion: a function which call him self continue. and codiotion is most important 
-                in recursion because functio did not get in infinete     
+                in recursion because functio did not get in infinete    
+                will use for add fuctionality without loop 
+
+    Direct Recursion
+    InDirect Recursion
+    Head and Tail Recursion             
