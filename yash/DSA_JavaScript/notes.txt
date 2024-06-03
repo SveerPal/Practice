@@ -5,4 +5,7 @@ time complexity
     time complexity is mainly calculated by counting the number of step to finish the execution.
 space complexity
     space complexity is the amount of space required to solve  problem 
-    space complexity =auxiliary space +input size             
+    space complexity =auxiliary space +input size
+
+ Recursion: a function which call him self continue. and codiotion is most important 
+                in recursion because functio did not get in infinete     
