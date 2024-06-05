@@ -15,9 +15,9 @@
 
 <body class="font-popins">
     <main class="py-14 h-screen w-screen bg-center bg-cover overflow-x-hidden overflow-y-auto bg-body-background-image">
-        <nav class="md:mx-2.5 mx-12">
+        <nav class="mx-4 lg:mx-10">
             <div class="flex flex-row justify-between lg:justify-center">
-                <div class="logo text-5xl font-bold text-amber-300 lg:text-7xl">Yashvir</div>
+                <div class="logo text-5xl font-bold text-amber-300 lg:text-5xl">Yashvir</div>
                 <div class="lg:hidden">
                     <!-- Mobile menu button -->
                     <button id="mobile-menu-button" class="bg-blue rounded-full p-2">
@@ -79,8 +79,10 @@
                 </div>
             </div>
         </nav>
-        <section class="flex flex-col justify-between align-center gap-10 mt-12 mx-12 md:mx-2.5">
-            <div class="px-10 py-10  bg-black rounded-2xl">
+        <section class="flex flex-col justify-between align-center gap-10 mx-4 mt-8
+        lg:grid  lg:grid-flow-col lg:gap-4 lg:grid-cols-[28%_60%_12%]
+        lg:mx-9 lg:mt-12 ">
+            <div class=" px-5 py-5 lg:px-10 lg:pt-10 bg-black rounded-2xl">
                 <div class="">
                     <span class="flex flex-col items-center">
                         <div class="">
@@ -130,7 +132,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="text-pdtlcolor bg-charcoal w-full rounded-lg px-10 py-8 mt-8">
+                        <div class="text-pdtlcolor bg-charcoal w-full rounded-lg px-10 py-8 mt-8 lg:px-4">
                             <div class="flex gap-3 items-center border-b border-zinc-600 py-3 ">
                                 <span class="bg-black px-4 py-2 rounded-lg">
                                     <i class="fa-solid fa-mobile-screen-button text-pdtlphonecolor"></i>
@@ -177,9 +179,9 @@
                     </span>
                 </div>
             </div>
-            <div class="px-10 py-10 bg-black rounded-2xl">
+            <div class=" bg-black rounded-2xl">
                 <div class=" bg-black rounded-2xl flex flex-col gap-4">
-                    <div class="">
+                    <div class="px-5 py-5 md:px-10 md:pt-10 ">
                         <div class="text-silver text-justify">
                             <div class="flex gap-3 items-center">
                                 <h2 class="text-white font-bold text-3xl font-roboto-slab">About</h2>
@@ -194,12 +196,12 @@
                             <p class=""> Known for being communicative, honest, adaptable, and willing to compromise,
                                 with a proven track record in mentoring co-workers and assuming leadership roles in
                                 project implementation.</p>
-                            
+
                         </div>
                     </div>
 
-                    <div class="">
-                        <h3 class="text-white font-bold text-2xl font-roboto-slab my-5">What I Do!</h3>
+                    <div class="px-5 md:px-10">
+                        <h3 class="text-white font-bold text-2xl font-roboto-slab pb-8">What I Do!</h3>
                         <div class="text-silver grid grid-rows-auto gap-8 [&>*]:border [&>*]:p-5 [&>*]:rounded-2xl">
                             <div class="">
                                 <div class="flex flex-col gap-2">
@@ -208,7 +210,11 @@
                                     </div>
 
                                     <h4 class="text-2xl text-white poppin font-serif">Web Development</h4>
-                                    <p class="">I specialize in designing and developing responsive, user-friendly websites that provide exceptional user experiences and drive business success. By combining my expertise in UI/UX design with technical skills in web development, I create websites that are visually appealing, highly functional, and optimized for performance. </p>
+                                    <p class="">I specialize in designing and developing responsive, user-friendly
+                                        websites that provide exceptional user experiences and drive business success.
+                                        By combining my expertise in UI/UX design with technical skills in web
+                                        development, I create websites that are visually appealing, highly functional,
+                                        and optimized for performance. </p>
 
                                 </div>
                             </div>
@@ -218,7 +224,11 @@
                                         <i class="fa-solid fa-laptop-code"></i>
                                     </div>
                                     <h4 class="text-2xl text-white poppin font-serif">App Development</h4>
-                                    <p class="">I specialize in designing and developing robust, user-friendly mobile applications that solve real-world problems and deliver exceptional user experiences. Combining my expertise in UI/UX design with technical skills in app development, I create apps that are visually appealing, intuitive, and highly functional. </p>
+                                    <p class="">I specialize in designing and developing robust, user-friendly mobile
+                                        applications that solve real-world problems and deliver exceptional user
+                                        experiences. Combining my expertise in UI/UX design with technical skills in app
+                                        development, I create apps that are visually appealing, intuitive, and highly
+                                        functional. </p>
 
                                 </div>
                             </div>
@@ -230,96 +240,96 @@
                                         <i class="fa-solid fa-swatchbook"></i>
                                     </div>
                                     <h4 class="text-2xl text-white poppin font-serif">Ui/Ux Design</h4>
-                                    <p class="text-base">I create visually appealing and user-friendly interfaces that enhance user interactions and improve overall satisfaction. My design philosophy revolves around clarity, simplicity, and consistency, ensuring that every visual element serves a purpose and contributes to a cohesive user experience. </p>
+                                    <p class="text-base">I create visually appealing and user-friendly interfaces that
+                                        enhance user interactions and improve overall satisfaction. My design philosophy
+                                        revolves around clarity, simplicity, and consistency, ensuring that every visual
+                                        element serves a purpose and contributes to a cohesive user experience. </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="">
+                    <div class="bg-gray">
                         <div class="">
-                            <h2 class="text-white font-bold text-2xl font-roboto-slab my-5">Clients</h2>
+                            <h2 class="text-center text-white font-bold text-2xl font-roboto-slab mt-7">Clients</h2>
                         </div>
-                        <div class="">
+                        <div class="px-3 py-16 flex justify-center items-center">
 
-                            <div class="mySwiper">
-                                <div class="">
-                                    <div class="">
-                                        <img class=""
+
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper overflow-hidden">
+                                    <div class="swiper-slide">
+                                        <img class="bostami-client-slider-logo"
                                             src="https://bostami-bootstrap.ibthemespro.com/bostami-template/assets/img/client/client-logo-2.png"
                                             alt="">
                                     </div>
-                                    <div class="">
-                                        <img class=""
+                                    <div class="swiper-slide"><img class="bostami-client-slider-logo"
                                             src="https://bostami-bootstrap.ibthemespro.com/bostami-template/assets/img/client/client-logo-2.png"
-                                            alt="">
-                                    </div>
-                                    <div class="">
-                                        <img class=""
+                                            alt=""></div>
+                                    <div class="swiper-slide"><img class="bostami-client-slider-logo"
                                             src="https://bostami-bootstrap.ibthemespro.com/bostami-template/assets/img/client/client-logo-2.png"
-                                            alt="">
-                                    </div>
-                                    <div class="">
-                                        <img class=""
+                                            alt=""></div>
+                                    <div class="swiper-slide"><img class="bostami-client-slider-logo"
                                             src="https://bostami-bootstrap.ibthemespro.com/bostami-template/assets/img/client/client-logo-2.png"
-                                            alt="">
-                                    </div>
+                                            alt=""></div>
                                 </div>
-                                <div class=""></div>
+                                <div class="swiper-pagination"></div>
                             </div>
 
 
                         </div>
                     </div>
                     <div class="">
-                        <p class="text-silver text-center  text-base  py-20">© 2024 All Rights Reserved By
+                        <p class="text-silver text-center  text-base  py-7">© 2024 All Rights Reserved By
                             <a class="text-amber-300" href="">Yashvir</a>.
                         </p>
                     </div>
                 </div>
-                <div class=" hidden bg-black rounded-2xl">
-                    <ul class="">
-                        <li class="">
-                            <a href="index.html" class="">
-                                <span class="">
-                                    <i class="fa-solid fa-address-card"></i>
-                                </span>
-                                about
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="resume.html" class="">
-                                <span class="">
-                                    <i class="fa-solid fa-file"></i>
-                                </span>
-                                Resume
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="portfolio.html" class="">
-                                <span class="">
-                                    <i class="fa-solid fa-briefcase"></i>
-                                </span>
-                                Works
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="blog.html" class="">
-                                <span class="">
-                                    <i class="fa-solid fa-newspaper"></i>
-                                </span>
-                                Blogs
-                            </a>
-                        </li>
-                        <li class="">
-                            <a href="contact.html" class="">
-                                <span class="">
-                                    <i class="fa-solid fa-address-book"></i>
-                                </span>
-                                contact
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+               
+            </div>  
+            <div class="hidden lg:block bg-black rounded-2xl text-silver>
+                <ul class="">
+                    <li class="">
+                        <a href="index.html" class="">
+                            <span class="">
+                                <i class="fa-solid fa-address-card"></i>
+                            </span>
+                            about
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="resume.html" class="">
+                            <span class="">
+                                <i class="fa-solid fa-file"></i>
+                            </span>
+                            Resume
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="portfolio.html" class="">
+                            <span class="">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </span>
+                            Works
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="blog.html" class="">
+                            <span class="">
+                                <i class="fa-solid fa-newspaper"></i>
+                            </span>
+                            Blogs
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="contact.html" class="">
+                            <span class="">
+                                <i class="fa-solid fa-address-book"></i>
+                            </span>
+                            contact
+                        </a>
+                    </li>
+                </ul>
+            </div>  
         </section>
     </main>
 </body>
@@ -335,11 +345,11 @@
 </style>
 <script>
     var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      centeredSlides: false,
-      spaceBetween: 30,
-      pagination:false,
-      freeMode: false,
+        slidesPerView: 3,
+        centeredSlides: false,
+        spaceBetween: 30,
+        pagination: false,
+        freeMode: false,
     });
 </script>
 <script>
