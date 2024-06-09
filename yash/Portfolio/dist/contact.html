@@ -1,237 +1,277 @@
-@extends('admin.app')
-@section('title') {{ $title }} @endsection
-@section('content')
-@php
-    $i = 1;
-@endphp
-    <div class="app-title">
-        <div>
-            <h1><i class="fa fa-shopping-bag"></i> {{ $title }}</h1>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-12">
-            <a href="{{ route('admin.products') }}" class="btn btn-primary text-white mr-1 mb-4" type="button">Back To Products</a>
-          <div class="tile">
-            <div class="tile-body">
-              <table class="table table-hover table-bordered" id="sampleTable">
-                <tbody>
-                    @foreach($products as $product)
-                    <tr><th>Image</th>
-                        <td>
-                            @if ($product->image != null)
-                                <img src="{{ asset('storage/uploads/products/'.$product->image) }}" id="logoImg" style="width: 80px; height: 80px;">
-                            @endif 
-                        </td>
-                    </tr>
-                     <tr> <th>Name</th><td>{{ $product->name }}</td></tr>
-                     <tr><th>Barcode</th><td>{{ $product->barcode }}</td></tr>
-                     <tr> <th>Code</th><td>{{ $product->code }}</td></tr>
-                    <tr> <th>SKU</th><td>{{ $product->sku }}</td></tr>
-                    <tr><th>Company</th><td>{{ $product->companyname }}</td></tr>
-                    <tr><th>Category</th><td>{{ $product->catname }}</td></tr>
-                    
-                    <tr><th>Average of product by user</th><td>@php
-$avgg = round($totPro/$totUser);
-echo $avgg ;
-@endphp
-{{ $avgg > 0 ? $avgg :'' }}</td></tr>
-                    <!--<tr><th>User</th><td>{{ $product->name }}</td></tr>-->
-                   
-                    
-                    
-                    
-                    <!--<tr><th>Status</th><td>{{ $product->status }}</td></tr>-->
-                    @endforeach
-                </tbody>
-              </table>
-            </div>
-          </div>    
-          <div class="tile">    
-            <div class="tile-body">
-                <div class="table-responsive">
-                  <table class="table table-hover table-bordered" id="sampleTable2">
-                    <thead>
-                        <tr> 
-                            <th>Sr No</th>
-                            <th>User</th>
-                            <th>Tags</th>
-                            <th>Shipper Box</th>
-                            <th>Graphic Box</th>
-                            <th>Value Paid</th>
-                            <th>Value Sold</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($productsuserlist as $prdtuserlist)
-                        <tr> 
-                            <td id="{{ $prdtuserlist->id }}"> {{ $i++ }}</td>
-                            <td>{{ $prdtuserlist->full_name }}</td>
-                            <td>{{ $prdtuserlist->tag_id }}</td>
-                            <td>{{ $prdtuserlist->shipperbox }}</td>
-                            <td>{{ $prdtuserlist->graphicbox }}</td>
-                            <td>{{ $prdtuserlist->value_paid }}</td>
-                            <td>{{ $prdtuserlist->value_sold }}</td>
-                            <td>
-                                <a @if ($prdtuserlist->status != 1) href="{{ route('admin.products.user-product-statuschange',['id'=>$prdtuserlist->id,'status'=>1]) }}" @endif
-                                class="btn btn-primary text-white btn-sm" type="button" title="Approved" @if ($prdtuserlist->status != 1) style="opacity:0.5" @endif>
-                                    <i class="fa fa-check-circle" aria-hidden="true"></i>
-                                </a>
-                                <a @if ($prdtuserlist->status != 0) href="{{ route('admin.products.user-product-statuschange',['id'=>$prdtuserlist->id,'status'=>0]) }}" @endif
-                                    class="btn btn-warning text-white btn-sm" type="button" title="Unapproveed" @if ($prdtuserlist->status != 0) style="opacity:0.5" @endif>
-                                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                                </a>
-                                <a @if ($prdtuserlist->status != 2) href="{{ route('admin.products.user-product-statuschange',['id'=>$prdtuserlist->id,'status'=>2]) }}"  @endif
-                                class="btn btn-danger text-white btn-sm" type="button" title="Rejected"  @if ($prdtuserlist->status != 2) style="opacity:0.5" @endif>
-                                    <i class="fa fa-ban" aria-hidden="true"></i> 
-                                </a>
-                            </td>
-                            
-                            <td>
-                                <span style="display:none" id="{{ $prdtuserlist->id }}">
-                                    <table class="table table-hover table-bordered" >
-                                    <tbody>
-                                    <tr> <th>Product Type</th><td>{{ $prdtuserlist->product_type }}</td></tr>
-                                    <tr> <th>Scale</th><td>{{ $prdtuserlist->scale }}</td></tr>
-                                    <tr> <th>Active Collection</th><td>{{ $prdtuserlist->active_collection }}</td></tr>
-                                    <tr> <th>Rating</th><td>{{ $prdtuserlist->rating }}</td></tr>
-                                    <tr> <th>Comment</th><td>{{ $prdtuserlist->comment }}</td></tr>
-                                    <tr><th>What Missing</th><td>{{ $prdtuserlist->figure_complete }}</td></tr>
-                                    <tr><th>Figure Complete</th><td>{{ $prdtuserlist->what_missing }}</td></tr>
-                                    <tr><th>Image</th>
-                                        <td>
-                                            @if ($prdtuserlist->image != null)
-                                                <img src="{{ asset('storage/uploads/products/'.$prdtuserlist->image) }}" id="logoImg" style="width: 80px; height: 80px;">
-                                            @endif 
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th>Gallery</th>
-                                        <td>
-                                            @if ($prdtuserlist->gallery != null)
-                                                @foreach(explode(',',$prdtuserlist->gallery) as $row)
-                                                    <img src="{{ asset('storage/uploads/products/'.$row) }}" id="logoImg" style="width: 80px; height: 80px;">
-                                                @endforeach
-                                            @endif 
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                    </table>
-                                </span>
-                                <a class="btn btn-primary btn-sm text-white" href="{{ route('admin.products.user-product-view',['product_id'=>$prdtuserlist->product_id,'id'=>$prdtuserlist->id]) }}" >
-                                    <i class="fa fa-eye" aria-hidden="true"></i> 
-                                </a>
-                                <a class="btn btn-warning btn-sm text-white" href="{{ route('admin.products.user-product-edit',['product_id'=>$prdtuserlist->product_id,'id'=>$prdtuserlist->id]) }}">
-                                    <i class="fa fa-pencil" aria-hidden="true"></i> 
-                                </a>
-                                @if(!$prdtuserlist->admin_id)
-                                    <form id="myForm{{ $prdtuserlist->id }}">
-                                        @csrf
-                                        <input type="hidden" value="{{ $prdtuserlist->id }}" name="productUserId">
-                                    </form>
-                                    <a class="btn btn-info btn-sm text-white copytoadmin" productUserId="{{ $prdtuserlist->id }}" href="javascript:void(0)" ><i class="fa fa-files-o"></i></a>
-                                @endif
-                                
-                            </td>
-                        </tr>
-                        <!--<tr><th>Status</th><td>{{ $product->status }}</td></tr>-->
-                        @endforeach
-                    </tbody>
-                  </table>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+
+<body class="font-popins">
+    <main class="py-14 h-screen w-screen bg-center bg-cover overflow-x-hidden overflow-y-auto bg-body-background-image">
+        <nav class="mx-4 lg:mx-10">
+            <div class="flex flex-row justify-between lg:justify-center">
+                <div class="logo text-5xl font-bold text-amber-300 lg:text-5xl">Yashvir</div>
+                <div class="lg:hidden">
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="bg-blue rounded-full p-2">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+
                 </div>
             </div>
-          </div>
-        </div>
-    </div>
-@endsection
-@push('scripts')
-    <script type="text/javascript" src="{{ asset('backend/js/plugins/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('backend/js/plugins/dataTables.bootstrap.min.js') }}"></script>
-    <script type="text/javascript">$('#sampleTable2').DataTable();</script>
-     
-    <script>
-    
-    document.querySelector(".copytoadmin").addEventListener('click',function(){
-        
-   
-        
-        let productUserId=this.getAttribute("productUserId");
-        var data = new FormData($("#myForm"+productUserId)[0]);
-       swal({
-            title: "Are you sure?",
-            text: "You will not be able to recover this imaginary file!",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes, delete it!",
-            cancelButtonText: "No, cancel plx!",
-            closeOnConfirm: false,
-            closeOnCancel: true
-        }, function (isConfirm) {
-            if (isConfirm) { 
-                $.ajax({
-                    type : "post",   
-                    url:"/admin/products/user-product-copy-to-admin",
-                    data:data,
-                    cache:false,
-                    contentType: false,
-                    processData: false,
-                    dataType:'json',
-                    beforeSend : function() {
+            <!-- Mobile menu -->
+            <div class="hidden mt-10" id="mobile-menu">
+                <div class="bg-gray shadow-3xl rounded-md ">
+                    <div id="" class="px-16 py-8">
+                        <ul class="text-white text-base gap-3 flex flex-col ">
+                            <li class="">
+                                <a href="index.html" class="">
+                                    <span class="">
+                                        <i class="fa-solid fa-address-card"></i>
+                                    </span>
+                                    About
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="resume.html" class="">
+                                    <span class="">
+                                        <i class="fa-solid fa-file"></i>
+                                    </span>
+                                    Resume
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="portfolio.html" class="">
+                                    <span class="">
+                                        <i class="fa-solid fa-briefcase"></i>
+                                    </span>
+                                    Works
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="blog.html" class="">
+                                    <span class="">
+                                        <i class="fa-solid fa-newspaper"></i>
+                                    </span>
+                                    Blogs
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="contact.html" class="">
+                                    <span class="">
+                                        <i class="fa-solid fa-address-book"></i>
+                                    </span>
+                                    Contact
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="flex flex-col justify-between align-center gap-10 mx-4 mt-8
+        lg:grid  lg:grid-flow-col lg:gap-3 lg:grid-cols-[30%_60%_12% xl:grid-cols-[27%_63%_10%]
+        lg:mx-9 lg:mt-12 ">
+            <div class=" px-5 py-5 lg:px-6 lg:pt-10 bg-black rounded-2xl lg:sticky lg:top-11 h-fit">
+                <div class="">
+                    <span class="flex flex-col items-center">
+                        <div class="">
+                            <img class="rounded-2xl" src="assets/img/parson-img-1.png" alt="yashvir profile pic">
+                        </div>
+                        <h1 class="mt-8 text-3xl font-bold text-white font-roboto-slab">
+                            <a href="javascript:void(0)" class="">Yashvir Pal</a>
+                        </h1>
+                        <span class="my-4 px-4 py-2 text-silver bg-gray rounded">Fullstack Web Developer</span>
+                        <ul class="grid gap-4 grid-cols-4 text-lg text-center">
+                            <!-- <li class="">p
+                                <a href="#" class="">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#" class="">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#" class="">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li> -->
+                            <li
+                                class="bg-gray px-4 py-2 rounded-lg text-linkedin-color hover:text-white hover:bg-linkedin-color">
+                                <a href="https://www.linkedin.com/in/sveerpal/" target="_blank" class="">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li
+                                class="bg-gray px-4 py-2 rounded-lg text-whatsapp-color hover:text-white hover:bg-whatsapp-color">
+                                <a href="https://wa.me/918756672297" target="_blank" class="">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </li>
+                            <li
+                                class="bg-gray px-4 py-2 rounded-lg text-skype-color hover:text-white hover:bg-skype-color">
+                                <a href="skype:live:2241a10c4bba6f24" target="_blank" class="">
+                                    <i class="fa-brands fa-skype"></i>
+                                </a>
+                            </li>
+                            <li class="bg-gray px-4 py-2 rounded-lg text-black hover:text-black hover:bg-white">
+                                <a href="https://github.com/SveerPal" target="_blank" class="">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="text-pdtlcolor bg-charcoal w-full rounded-lg px-10 py-8 mt-8 lg:py-4 lg:px-4">
+                            <div class="flex gap-3 items-center border-b border-zinc-600 py-3 ">
+                                <span class="bg-black px-4 py-2 rounded-lg">
+                                    <i class="fa-solid fa-mobile-screen-button text-pdtlphonecolor"></i>
+                                </span>
+                                <div class="">
+                                    <span class="text-sm">Phone</span>
+                                    <p class="text-white">
+                                        <a href="tel:+91 875 667 2297">
+                                            +91 875 667 2297
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 items-center border-b border-zinc-600 py-3 ">
+                                <div class="bg-black px-4 py-2 rounded-lg">
+                                    <i class="fa-solid fa-envelope-open-text text-pdtlemailcolor"></i>
+                                </div>
+                                <div class="">
+                                    <span class="text-sm">Email</span>
+                                    <p class="text-white break-all" >
+                                        <a href="mailto:yashveersoftwere06@gmail.com">
+                                            yashveersoftwere06@gmail.com
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 items-center border-b border-zinc-600 py-3 ">
+                                <div class="bg-black px-4 py-2 rounded-lg">
+                                    <i class="fa-solid fa-location-dot text-pdtllocationcolor"></i>
+                                </div>
+                                <div class="">
+                                    <span class="text-sm">Location</span>
+                                    <p class="text-white">Delhi India</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 items-center border-b border-zinc-600 py-3 ">
+                                <div class="bg-black px-4 py-2 rounded-lg">
+                                    <i class="fa-solid fa-calendar-days text-pdtlcalendercolor"></i>
+                                </div>
+                                <div class="">
+                                    <span class="text-sm">Birthday</span>
+                                    <p class="text-white">Nov 26, 1993</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="text-white text-xl font-bold bg-blue mt-6 rounded-lg px-8 py-4 hover:bg-gray hover:border hover:border-blue">
+                            <a href="./assets/yash_phpdeveloper_7+years.pdf" target="_blank" class="">
+                                <i class="fa-solid fa-download"></i> Download CV
+                            </a>
+                        </div>
+                    </span>
+                </div>
+            </div>
+            <div class=" bg-black rounded-2xl">
+                <div class=" bg-black rounded-2xl flex flex-col gap-4">
+                    <div class="px-5 py-5 md:px-10 md:pt-10 ">
+                        <div class="text-silver text-justify">
+                            <div class="flex gap-3 items-center">
+                                <h2 class="text-white font-bold text-3xl font-roboto-slab">Contact</h2>
+                                <span class="bg-blue w-[80px] h-[2px]"></span>
+                            </div>   
+                        </div>
+                    </div>
+                    
+                    <div class="px-5 py-5 md:px-10 bg-gray text-silver  mx-5 rounded-2xl">
+                        <p>I'm always open to discussing product</p>
+                        <h6 class="text-white my-4">design work or partnerships.</h6>
+                        <form>
+                            <input type="text" placeholder="Name*" class="bg-transparent border-b
+                            ocus-visible:ring-offset-transparent focus-visible:ring-transparent"/>
+                        </form>
                         
-                    },
-                    success : function(response) {
-                        // console.log(response);
-                        if(response.sts==1){
-                            this.remove();
-                            //setTimeout(function(){
-                                swal("Success!",response.msg , "success");
-                            //},50)    
-                        }else if(response.sts=2){
-                            //setTimeout(function(){
-                                swal("Info!",response.msg , "info");
-                            //},50)    
-                        }
-                    },
-                    error: function(requestObject, error, errorThrown) {
-                        //setTimeout(function(){
-                         swal("Error!",errorThrown , "error");
-                        //},50) 
-                          jQuery('.msg').html('<div class="alert alert-danger" role="alert">'+errorThrown+'</div>');
-                    }
-                }); 
-            }
-        });
-        
-    })
-    
-        function showModel(id){
-            jQuery('.modal-body').html(jQuery('#'+id).html())
-        }
-        $("#myModal").on("hidden.bs.modal", function () {
-            jQuery('.modal-body').html('')
-        });
-    </script>
-@endpush
-<!-- Modal -->
-<div class="modal fade  bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Details<!--Modal title--></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-       
-      </div>
-    </div>
-  </div>
-</div>
+                    </div>
+                   
+                    <div class="">
+                        <p class="text-silver text-center  text-base  py-7">© 2024 All Rights Reserved By
+                            <a class="text-amber-300" href="">Yashvir</a>.
+                        </p>
+                    </div>
+                </div>
+               
+            </div>  
+            <div class="hidden lg:block sticky top-11 h-fit bg-black rounded-2xl py-5 text-silver text-center">
+                <ul class="m-5 flex flex-col align-center justify-center gap-5 [&>*]:rounded-xl [&>*]:bg-gray 
+                    [&>*>*]:flex [&>*>*]:flex-col [&>*>*]:align-center [&>*>*]:justify-center [&>*>*]:m-3 ">
+                    <li class="hover:text-white hover:bg-blue">
+                        <a href="index.html" class="">
+                            <span class="">
+                                <i class="fa-solid fa-address-card"></i>
+                            </span>
+                            About
+                        </a>
+                    </li>
+                    <li class="hover:text-white hover:bg-blue">
+                        <a href="resume.html" class="">
+                            <span class="">
+                                <i class="fa-solid fa-file"></i>
+                            </span>
+                            Resume
+                        </a>
+                    </li>
+                    <li class="hover:text-white hover:bg-blue">
+                        <a href="portfolio.html" class="">
+                            <span class="">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </span>
+                            Works
+                        </a>
+                    </li>
+                    <li class="hover:text-white hover:bg-blue">
+                        <a href="blog.html" class="">
+                            <span class="">
+                                <i class="fa-solid fa-newspaper"></i>
+                            </span>
+                            Blogs
+                        </a>
+                    </li>
+                    <li class="hover:text-white hover:bg-blue">
+                        <a href="contact.html" class="">
+                            <span class="">
+                                <i class="fa-solid fa-address-book"></i>
+                            </span>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>  
+        </section>
+    </main>
+</body>
+
+
+<script>
+    //  Toggle mobile menu visibility
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        var mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+</html>
