@@ -1,0 +1,21 @@
+TypeScript: analize the code, we type . it's type of development tool
+Declayer Variable=> let greetings: string
+
+intger and float define by number in typscript there is nothing to declayer diffrent type 
+
+type i declare neccesory if not declare it' ll problem with api return
+
+tsc.cmd --init
+npm init -y
+
+tsc.cmd -w //watch mode
+
+npm i lite-server // Like Nodemon packege
+
+npm start
+
+Set accessc can not have return type 
+
+diffrence between abstract class and interface
+//in generic denote with <T>
+any and type diffrence is type return type locked but in any type will bbe anything 

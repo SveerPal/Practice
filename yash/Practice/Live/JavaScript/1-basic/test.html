@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1></h1>
+        <img src="1.png" height="200" width="200">
+        <button>Change user</button>
+        <script>
+            function test(a,b,c=""){
+                console.log('A= '+a);
+                console.log('B= '+b);
+                console.log('C= '+ c);
+            }
+
+            let myHeading = document.querySelector("h1");
+            myHeading.textContent = "Hello world!";
+            document.querySelector('html').addEventListener('click',()=>{
+                console.log('Stop Poking ');
+            })
+
+            const myImage=document.querySelector('img');
+            myImage.onclick=()=>{
+                
+                const mySrc=myImage.getAttribute('src')
+            
+                if(mySrc=='1.png'){
+                    console.log('1.jpg')
+                    myImage.setAttribute('src','1.jpg');
+                }else{
+                    console.log('3.jpg')
+                    myImage.setAttribute('src','3.jpg')
+                }
+            };
+
+
+            let myButton=document.querySelector('button');
+             myHeading=document.querySelector('h1');
+
+             function setUserName(){
+                const myName=prompt('Please enter your name');
+                localStorage.setItem('name',myName)
+                myHeading.textContent=`Mozile is fine, ${myName}`;
+             }
+
+            if (!localStorage.getItem("name")) {
+                setUserName();
+            } else {
+                const storedName = localStorage.getItem("name");
+                myHeading.textContent = `Mozilla is cool, ${storedName}`;
+            }
+            myButton.onclick=()=>{
+                setUserName();
+            }
+
+            //test(1,2);
+            //test(1,2,3);
+        </script>
+    </body>
+</html>

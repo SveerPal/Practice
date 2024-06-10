@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   
+    <body>
+        <button id="button_A">Press me</button>
+        <h3 id="heading_A"></h3>
+          
+        <script>
+           const headingA=document.querySelector('#heading_A')
+           const buttonA=document.querySelector('#button_A')
+
+           buttonA.onclick=()=>{
+                const name=prompt('what is your name?')
+                alert(`Hello ${name}, nice to see you`)
+                headingA.textContent=`Hello ${name}`
+           }
+           let scoobyDoo=null;
+           console.log(scoobyDoo);
+           const myInt = 5;
+            const myFloat = 6.667;
+            myInt;
+            myFloat;
+            typeof myInt;
+            typeof myFloat;
+            const lotsOfDecimal = 1.766584958675746364;
+            console.log(lotsOfDecimal);;
+            const twoDecimalPlaces = lotsOfDecimal.toFixed(1);
+            console.log(twoDecimalPlaces);;
+
+        </script>
+    </body>
+</html>
