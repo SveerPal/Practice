@@ -629,8 +629,16 @@ video {
   display: inline-block;
 }
 
+.inline{
+  display: inline;
+}
+
 .flex{
   display: flex;
+}
+
+.inline-flex{
+  display: inline-flex;
 }
 
 .grid{
@@ -712,6 +720,10 @@ video {
 
 .items-center{
   align-items: center;
+}
+
+.justify-end{
+  justify-content: flex-end;
 }
 
 .justify-center{
@@ -971,6 +983,10 @@ video {
   text-align: center;
 }
 
+.text-right{
+  text-align: right;
+}
+
 .text-justify{
   text-align: justify;
 }
@@ -1146,6 +1162,11 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.hover\:text-blue:hover{
+  --tw-text-opacity: 1;
+  color: rgb(27 116 228 / var(--tw-text-opacity));
+}
+
 .focus\:h-8:focus{
   height: 2rem;
 }
@@ -1296,6 +1317,10 @@ video {
   justify-content: center;
 }
 
+.\[\&\>\*\]\:m-2>*{
+  margin: 0.5rem;
+}
+
 .\[\&\>\*\]\:my-5>*{
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -1377,6 +1402,11 @@ video {
 .\[\&\>\*\]\:text-silver>*{
   --tw-text-opacity: 1;
   color: rgb(166 166 166 / var(--tw-text-opacity));
+}
+
+.\[\&\>\*\]\:hover\:text-blue:hover>*{
+  --tw-text-opacity: 1;
+  color: rgb(27 116 228 / var(--tw-text-opacity));
 }
 
 .focus\:\[\&\>\*\]\:border-blue>*:focus{
