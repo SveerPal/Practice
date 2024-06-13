@@ -13,4 +13,6 @@ space complexity
 
     Direct Recursion
     InDirect Recursion
-    Head and Tail Recursion             
+        Head and Tail Recursion  
+            Head Recursion: perform action above of recursion function called 
+            Tail Recursion: perform action below of recursion function called            

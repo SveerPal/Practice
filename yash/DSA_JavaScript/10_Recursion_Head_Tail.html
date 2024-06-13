@@ -7,31 +7,44 @@
     <title> Head and Tail Recursion</title>
 </head>
 
-<body>
+<body> 
     <h1>Head and Tail Recursion</h1>
     <script>
-        let totalApple=0;
-        let money=100
-        function buyApple(x){
-            ///console.log(x)
-            
-            if(x>0){
-                console.log("I have ",x ,"RS ",totalApple)
-                buyMore(x)
-               
-            }else{
-                console.log("I don't have more money ",totalApple)
-            }
-        }
+        //Call Stack Example
+        // let totalApple=0;
+        // let money=100
+        // function colors(){
+        //     let data =20
+        //     console.log(data)
+        //     if(true){
+        //         console.log(data*20)
+        //     }else{
+        //         console.log(data/20)
+        //     }
+        // }
+        // function days(){
+        //     colors()
+        // }
+        // function fruits(){
+        //     days()
+        // }
+        // function buyApple(x){
+        //     fruits()
+        // }
         
 
-        function buyMore(x){
-            totalApple++
-            buyApple(x-10)
-            //console.log("BUy More",x)
-        }
-        buyApple(money)
+        
+        // buyApple()
 
+        function test(x){
+            console.log(x)//Head Recursion #Output 5,4,3,2,1,0 because of call stack
+        
+            if(x>0){
+                test(x-1)
+            }
+            console.log(x) //tail Recursion #Output 0,1,2,3,4,5 because of call stack
+        }
+        test(5)
     </script>
 </body>
 
