@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String with Stack</title>
+</head>
+
+<body>
+    <h1>Reverse String with Stack</h1>
+
+    <script>
+        let data = [];
+        let arryLength = data.length;
+
+
+        function push(newVal) {
+            data[arryLength] = newVal
+            arryLength = arryLength + 1
+        }
+        function pop() {
+            let lastRemovedItem=data[arryLength-1]
+            arryLength = arryLength - 1
+            data.length = arryLength;
+            return lastRemovedItem;
+        }
+
+        function reverseStr(items) {
+            //console.log(items)
+            for (let i = 0; i < items.length; i++) {
+                push(items[i])              
+            }
+            for (let i = 0; i < items.length; i++) {
+                
+                items[i]= pop()              
+            }
+        }
+        let str="Yashvir"
+        //String TO Array
+        str=str.split("")
+        reverseStr(str)
+        console.log(str)
+        str=str.join("")
+        console.log(str)
+
+
+    </script>
+</body>
+
+</html>
