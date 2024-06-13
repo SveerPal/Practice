@@ -15,4 +15,10 @@ space complexity
     InDirect Recursion
         Head and Tail Recursion  
             Head Recursion: perform action above of recursion function called 
-            Tail Recursion: perform action below of recursion function called            
+            Tail Recursion: perform action below of recursion function called     
+
+Stack: work on last in first out system because it has one way to delete or insert data
+
+Queue: work on first in first out because it has one way to insert data and other way to delete data
+    enqueue: add iem in Queue
+    dequeue: delete item from Queue                   
