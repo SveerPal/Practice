@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Data Structure</title>
+</head>
+
+<body>
+    <h1>Stack Data Structure</h1>
+    <script>
+        let data = [];
+        let arryLength = data.length;
+        let max = 5
+        console.log(data)
+        function push(newVal) {
+            if (arryLength < max) {
+                data[arryLength] = newVal
+                arryLength = arryLength + 1
+                
+            } else {
+                alert("Stack is full")
+            }
+        }
+        function pop() {
+            if (arryLength >0 ) {
+                
+                arryLength = arryLength - 1
+                data.length=arryLength;
+
+            } else {
+                alert("Stack is already empty")
+            }
+        }
+        push(20)
+        push(210)
+        push(230)
+        push(2310)
+       // push(21)
+        push(31)
+        pop()
+        pop()
+        pop()
+        pop()
+        pop()
+        //pop()
+        console.log(data)
+    </script>
+</body>
+
+</html>

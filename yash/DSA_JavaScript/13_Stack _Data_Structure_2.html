@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack Data Structure</title>
+</head>
+
+<body>
+    <h1>Stack Data Structure</h1>
+    <input type="text" id="newVal" placeholder="Enter Value">
+    <button onclick="push()">Add Element in Stack </button>
+    <button onclick="pop()">Delete Element in Stack</button>
+    <button onclick="display()">Display All Element of Stack </button>
+    <script>
+        let data = [];
+        let arryLength = data.length;
+        let max = 5
+
+        function push() {
+            let newVal = document.querySelector("#newVal").value;
+            if (arryLength < max) {
+                data[arryLength] = newVal
+                arryLength = arryLength + 1
+                document.querySelector("#newVal").value = "";
+                console.log("Element Added")
+            } else {
+                alert("Stack is full")
+            }
+        }
+        function pop() {
+            if (arryLength > 0) {
+
+                arryLength = arryLength - 1
+                data.length = arryLength;
+
+            } else {
+                alert("Stack is already empty")
+            }
+        }
+
+        function display() {
+            for (let i = 0; i <= arryLength - 1; i++) {
+                console.log("Stack element number", i, " and value is ", data[i])
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
