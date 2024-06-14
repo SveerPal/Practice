@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue </title>
+</head>
+
+<body>
+    <h1>Queue With input element </h1>
+    <input placeholder="enter value" id="newVal" />
+    <button type="button" onclick="enqueue()">Add Element</button>
+    <br/>
+    <br/>
+    <button type="button" onclick="dequeue()">Remove Element</button>
+    <button type="button" onclick="display()">Display</button>
+    <button type="button" onclick="front()">Get Front Element</button>
+    <button type="button" onclick="rear()">Get Rear Element</button>
+    <script>
+
+        let queue = [];
+        let currentSize = queue.length;
+        let maxSize = 5;
+
+        // function enqueue(newVal) {
+        //     if (currentSize >= maxSize) {
+        //         alert("Queue is full")
+        //     } else {
+        //         queue[currentSize] = newVal
+        //         currentSize = currentSize + 1
+        //     }
+        // }
+        function enqueue() {
+            let newVal = document.getElementById("newVal").value
+            if (currentSize >= maxSize) {
+                alert("Queue is full")
+            } else {
+                queue[currentSize] = newVal
+                currentSize = currentSize + 1
+                document.getElementById("newVal").value = ""
+            }
+
+        }
+        function dequeue() {
+            if (!isEmpty()) {
+                for (let i = 0; i < currentSize; i++) {
+                    queue[i] = queue[i + 1]
+                    // queue.length = currentSize;
+                }
+                currentSize = currentSize - 1
+                queue.length = currentSize
+
+            } else {
+                alert("Queue is already empty")
+            }
+
+        }
+        function display() {
+            console.log(queue)
+        }
+
+        function front() {
+            if (!isEmpty()) {
+                console.log(queue[0])
+            } else {
+                alert("queue is already empty")
+            }
+        }
+        function rear() {
+            if (!isEmpty()) {
+                console.log(queue[currentSize - 1])
+            } else {
+                alert("queue is already empty")
+            }
+        }
+        function isEmpty() {
+            if (currentSize <= 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // enqueue(45)
+        // enqueue(25)
+        // enqueue(47)
+        // enqueue(35)
+        // enqueue(49)
+
+        // display()
+        // dequeue()
+        // display()
+
+    </script>
+</body>
+
+</html>
