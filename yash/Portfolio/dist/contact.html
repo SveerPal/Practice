@@ -287,21 +287,23 @@
     });
 </script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 <script>
+    
     $('#myForm').submit(function(e){
         e.preventDefault()
         
         $.ajax({
             type: "POST",
             url: "https://mandrillapp.com/api/1.0/messages/send.json",
-            data: {
-                
-            }
-        }).error(function(response) {
+            data: { }
+        }).error(function(response) {   
+            //console.log(response);          
             $('.message').html("!Oop somthing went wrong. please try again");
-            $('.message').addClass('text-pdtlphonecolor');
+            $('.message').addClass('text-red-600');
         }).done(function(response) {
-            console.log(response); 
+            //console.log(response); 
+            confetti();
             $('.message').html("Thankyou for contacting us. we will contact you soon.");
             $('.message').addClass('text-pdtlemailcolor');
         });
