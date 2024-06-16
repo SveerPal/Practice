@@ -20,5 +20,6 @@ space complexity
 Stack: work on last in first out system because it has one way to delete or insert data
 
 Queue: work on first in first out because it has one way to insert data and other way to delete data
-    enqueue: add iem in Queue
-    dequeue: delete item from Queue                   
+    Enqueue: add item in Queue (Rear End)
+    Dequeue: remove item from Queue (Front End)      
+    Circular Queue: in start both rear and front end will be same             

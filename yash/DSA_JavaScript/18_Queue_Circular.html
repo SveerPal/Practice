@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Queue </title>
+</head>
+
+<body>
+    <h1>Circular Queue </h1>
+    <input placeholder="enter value" id="newVal" />
+    <button type="button" onclick="enqueue()">Add Element</button>
+    <br/>
+    <br/>
+    <button type="button" onclick="dequeue()">Remove Element</button>
+    <button type="button" onclick="display()">Display</button>
+    <button type="button" onclick="front()">Get Front Element</button>
+    <button type="button" onclick="rear()">Get Rear Element</button>
+    <script>
+        class Queue{
+            
+            constructor(size){
+                this.maxSize = size;
+                this.items=new Array(size) //define array size
+                this.currentSize=0
+                this.rear=-1;
+                this.front=-1;
+            } 
+             
+
+             enqueue(newVal) {
+                if (this.currentSize != this.maxSize) {
+                    if(this.rear==this.maxSize-1){
+                        this.rear=0
+                    }else{
+                        this.rear++
+                    }
+                    this.items[this.rear] = newVal
+                                       
+                    this.currentSize++
+                    if(this.front==-1){
+                        this.front=this.rear
+                    }
+                } else {
+                    alert("Queue is full")
+                }
+            }
+            dequeue() {
+                if (this.currentSize!=0) {
+                    this.items[this.front]=null
+                    if(this.front == this.max-1){
+                        this.front=0
+                    }else{
+                        this.front++
+                    }
+                    this.currentSize--
+                   
+                } else {
+                    this.front=-1
+                    this.rear=-1
+                    alert("Queue is full")
+                }
+
+            }
+            //  display() {
+            //     console.log(queue)
+            // }
+
+            //  front() {
+            //     if (!isEmpty()) {
+            //         console.log(queue[0])
+            //     } else {
+            //         alert("queue is already empty")
+            //     }
+            // }
+            //  rear() {
+            //     if (!isEmpty()) {
+            //         console.log(queue[currentSize - 1])
+            //     } else {
+            //         alert("queue is already empty")
+            //     }
+            // }
+            //  isEmpty() {
+            //     if (currentSize <= 0) {
+            //         return true;
+            //     } else {
+            //         return false;
+            //     }
+            // }
+
+            
+        }
+        let obj1=new Queue(5)
+        obj1.enqueue(23)
+        obj1.enqueue(1)
+        obj1.enqueue(38)
+
+
+
+    </script>
+</body>
+
+</html>
