@@ -201,7 +201,7 @@
                     <div class="px-5 py-5 md:px-10 bg-gray text-silver  mx-5 rounded-2xl">
                         <p>I'm always open to discussing product</p>
                         <h6 class="text-white my-4 font-bold">design work or partnerships.</h6>
-                        <form>
+                        <form id="myForm">
                             <div class="focus:[&>*]:border-blue focus:[&>label]:text-blue my-6">
                                 <label class="block ">Name * </label>
                                 <input type="text" class="bg-transparent border-b w-full outline-none focus:h-8"/>
@@ -214,7 +214,9 @@
                                 <label class="block ">Message * </label>
                                 <input type="text" class="bg-transparent border-b w-full outline-none focus:h-8"/>
                             </div>
-                            <button class="rounded-lg text-white border border-silver px-3 py-1 hover:border-blue">Submit</button>
+                            <button class="rounded-lg text-white block border border-silver px-3 py-1 hover:border-blue">Submit</button>
+                            <br/>                            
+                            <span class="message mt-10 text-pdtlphonecolor"></span>
                         </form>
                         
                     </div>
@@ -284,5 +286,28 @@
         mobileMenu.classList.toggle('hidden');
     });
 </script>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    $('#myForm').submit(function(e){
+        e.preventDefault()
+        
+        $.ajax({
+            type: "POST",
+            url: "https://mandrillapp.com/api/1.0/messages/send.json",
+            data: {
+                
+            }
+        }).error(function(response) {
+            $('.message').html("!Oop somthing went wrong. please try again");
+            $('.message').addClass('text-pdtlphonecolor');
+        }).done(function(response) {
+            console.log(response); 
+            $('.message').html("Thankyou for contacting us. we will contact you soon.");
+            $('.message').addClass('text-pdtlemailcolor');
+        });
+        setTimeout(function(){
+            $('.message').html('');
+        },5000)
+    })        
+</script>
 </html>
