@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search With Iterative</title>
+</head>
+
+<body>
+    <h1>Binary Search With Iterative</h1>
+    
+    <script>
+        let data=[6,8,22,35,56,87]
+       // let data=[5,9,13,17]
+        let find=35;
+        let start=0;
+        let end=data.length-1;
+        position=undefined;
+        while (start <=end) {
+            let mid=Math.floor((start+end)/2)
+            if(data[mid]==find){
+                position=mid;
+               break;
+            }else if(data[mid]<find){
+                start =mid+1
+            }else{
+                end=mid-1
+            }
+            
+        }
+        console.log(`Index of element ${find} is`,position)
+    </script>
+</body>
+
+</html>

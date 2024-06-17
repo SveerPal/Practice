@@ -26,4 +26,11 @@ Queue: work on first in first out because it has one way to insert data and othe
 
 Search:
     Linear Search: In Linear check one by one , in Linear Search complexity will be n where f{n)=O(n)              
-    Binary Search:               
+    Binary Search: first we need to sort array with out sort Binary search will not work
+                    number of input divide in half then it start to search when it start searching
+                     it will check from mid point if search point is equal to mid point it will give 
+                     number ,if search point is less than from mid point it will start check from
+                      left side otherwise it will start from right side  it will keep deviding 
+                      again and again array(left and right) untill we find the element       
+        iterative approch: use loop
+        recursive approch:  use recursive function     
