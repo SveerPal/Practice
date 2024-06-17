@@ -22,4 +22,8 @@ Stack: work on last in first out system because it has one way to delete or inse
 Queue: work on first in first out because it has one way to insert data and other way to delete data
     Enqueue: add item in Queue (Rear End)
     Dequeue: remove item from Queue (Front End)      
-    Circular Queue: in start both rear and front end will be same             
+    Circular Queue: in start both rear and front end will be same  
+
+Search:
+    Linear Search: In Linear check one by one , in Linear Search complexity will be n where f{n)=O(n)              
+    Binary Search:               
