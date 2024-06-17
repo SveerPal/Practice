@@ -9,7 +9,18 @@ yash/Practice/Live/Express/Authsystem/node_modules
 yash/Practice/Live/Express/CloudinaryFileUpload/node_modules
 yash/Practice/Live/Express/FirstProject/node_modules
 yash/Practice/Live/React/React/node_modules
-yash/laravel
+
+
+#yash/laravel
+yash/laravel/laravelvuejs/vendor/
+yash/laravel/laravelvuejs/node_modules/
+yash/laravel/laravelvuejs/npm-debug.log
+yash/laravel/laravelvuejs/yarn-error.log
+yash/laravel/laravelvuejs/storage/*.key
+yash/laravel/laravelvuejs/.env
+
+yash/laravel/laravel-event-example
+
 
 
 
