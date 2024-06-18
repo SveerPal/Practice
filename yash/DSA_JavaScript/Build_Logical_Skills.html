@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic Skills</title>
+</head>
+
+<body>
+    <h1>Find Even Value from array, make double of every element  and find array length manully</h1>
+    
+    <script>
+
+        data = [35, 6, 11,22, 56, 8, 87]
+        const evenValue=Array()
+        const doubleArray=Array()
+       
+        let  arrayLength, j;
+        for (let i = 0; i < data.length; i++) {
+            doubleArray.push(data[i]*2)
+            if(data[i]%2==0){
+                evenValue.push(data[i])
+            }
+            arrayLength=i+1;
+        }
+        console.log(data)
+        console.log(`Even Value from array ${evenValue}`)
+        console.log(`double element ${doubleArray}`)
+        console.log(`Array Length ${arrayLength}`)
+        
+
+    </script>
+</body>
+
+</html>
