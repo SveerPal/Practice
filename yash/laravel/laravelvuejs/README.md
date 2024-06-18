@@ -17,3 +17,15 @@
         
 
     npm install --save axios vue-axios	
+    
+#Larvel Debuuger
+    composer require barryvdh/laravel-debugbar 
+    composer update
+    php artisan vendor:publish --provider="Barryvdh\Debugbar\ServiceProvider" --tag="config"
+
+
+    config/debugbar.php	
+    'enabled' => env('APP_DEBUG', false),
+
+    APP_DEBUG=true
+    php artisan config:cache
