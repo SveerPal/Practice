@@ -33,4 +33,8 @@ Search:
                       left side otherwise it will start from right side  it will keep deviding 
                       again and again array(left and right) untill we find the element       
         iterative approch: use loop
-        recursive approch:  use recursive function     
+        recursive approch:  use recursive function    
+
+Sorting
+    Selection
+    Insertion         
