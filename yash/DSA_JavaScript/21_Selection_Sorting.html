@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sorting</title>
+</head>
+
+<body>
+    <h1>Selection Sorting</h1>
+    complexity will be  O(n**2)
+    <script>
+        //Ascending Order
+        // let data = [35, 6, 22, 56, 8, 87]
+
+        // for (let i = 0; i < data.length; i++) {
+        //     minId = i
+        //     for (let j = i + 1; j < data.length; j++) {
+                
+        //         if (data[j] < data[minId]) {
+        //             minId = j
+        //         }
+        //     }
+        //     let temp = data[minId]
+           
+        //     data[minId] = data[i]
+        //     data[i] = temp
+
+        // }
+        // console.log(data)
+
+        //Descending Order
+        data = [35, 6, 22, 56, 8, 87]
+
+        for (let i = 0; i < data.length; i++) {
+            minId = i
+            for (let j = i + 1; j < data.length; j++) {
+                
+                if (data[j] > data[minId]) {
+                    minId = j
+                }
+            }
+            let temp = data[minId]
+           
+            data[minId] = data[i]
+            data[i] = temp
+
+        }
+        console.log(data)
+
+    </script>
+</body>
+
+</html>
