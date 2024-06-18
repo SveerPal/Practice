@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+
+<body>
+    <h1>Map</h1>
+    
+    <script>
+
+        let data = new Map([
+            ['name','Yash'],
+            [true,'pal'],
+            [100,'11111111'],
+        ])
+        // console.log(data)
+        // data.set('color','red')
+        // console.log(data)
+        // console.log(`Size of Data is`,data.size) //Get Size of property 
+        // console.log(`Check key 100`,data.has(100)) //Check Key is availble 
+        // console.log(`Check value of 100 `,data.get(100)) //Check Value is availble 
+
+        //console.log(`Clear all data`,data.clear()) //Remove All Data from map 
+       //console.log(data)
+
+        // for(let x of data){
+        //     console.log(x)
+        //     console.log('Key is ',x[0])
+        //     console.log('Value is ',x[1])
+        // }
+        data.forEach((val,key)=>{
+            console.log(`Key is ${key} and Value is ${val}`)
+            
+        })
+        
+        
+        
+
+    </script>
+</body>
+
+</html>

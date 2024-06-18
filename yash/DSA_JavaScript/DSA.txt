@@ -46,7 +46,14 @@ palindrome: if string read same from front or back called palindrome
 Object and Array 
     both are feature in javascript and data structer 
      
-    Object: data store in form of key and value
-            in object we can can identify value by their key name but in array
-            we can't identify value by their index
+    Object(:)
+        data store in form of key and value
+        in object we can can identify value by their key name but in array
+        we can't identify value by their index
+        key can be only string
+        ex: {name:"Yash"} 
+Map (=>)
+    data are in key and value pair       
+    key can be any data type (string,number,boolean,undefined)
+    ex: {name=>"Yash"}      
 
