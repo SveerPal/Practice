@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object | Hash</title>
+</head>
+
+<body>
+    <h1>Object | Hash</h1>
+    
+    <script>
+
+        let data = {
+                    name:"Yash",
+                    age:30,
+                    phone:863265623,
+                    getName:function(){
+                        return this.name
+                    }
+                }
+        console.log(data)
+        data.name="Yashvir"
+        console.log(data)
+        console.log(data.getName())
+
+        for(x in data){
+            console.log(`The key is ${x} and value is ${data[x]}`)
+        }
+        //Get only Key from Object
+        console.log(Object.keys(data))
+        //Get only Value from Object
+        console.log(Object.values(data))
+        
+
+    </script>
+</body>
+
+</html>
