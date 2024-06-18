@@ -41,3 +41,4 @@ Sorting
 
 String Anagram : two string which have same charecter and length will same , but can place in
                      any order(cat,tac,atc)
+palindrome: if string read same from front or back called palindrome                     

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+
+<body>
+    <h1> Check Strings are Palindrome</h1>
+    
+    <script>
+
+        function checkPalindrome(data){
+            let start=0;
+            let end=data.length-1;
+            let result=true;
+           
+            while (end > start){
+                if(data[start]!=data[end]){
+                    
+                    result=false
+                }
+                start++
+                end--
+            }
+           
+            return result;
+        }
+        //let chekpalndrm=checkPalindrome('level')
+        let chekpalndrm=checkPalindrome('ltttevel')
+        if(chekpalndrm){
+            console.log('Palindrome')
+        }else{
+            console.log('Not Palindrome')
+        }
+        
+
+    </script>
+</body>
+
+</html>
