@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Maximum occurring character</title>
+</head>
+
+<body>
+    <h1>  Maximum occurring charactere</h1>
+    
+    <script>
+
+        function checkMaximumOccurringCharacter(data){
+            let objStr={};
+            let maxKey=0;
+            for (ch of data){
+                objStr[ch]=(objStr[ch] || 0) +1
+                if(maxKey==""|| objStr[ch]>objStr[maxKey]){
+                    maxKey=ch
+                }
+            }
+            console.log(maxKey)
+            console.log(objStr)
+            
+        }
+        console.log(checkMaximumOccurringCharacter('llltttevel'))
+    </script>
+</body>
+
+</html>
