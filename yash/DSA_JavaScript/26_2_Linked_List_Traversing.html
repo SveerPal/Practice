@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Traversing</title>
+</head>
+
+<body>
+    <h1>Linked List Traversing</h1>
+    
+    <script>
+        class List{
+            constructor (data){
+                this.head={
+                    value:data,
+                    next:null
+                }
+                this.tail=this.head    
+                this.size=1
+            }
+            addNode(data){
+                let newNode={
+                    value:data,
+                    next:null
+                }
+                this.tail.next=newNode
+                this.tail=newNode
+                this.size++
+            }
+            traversing(){
+                let counter=0
+                let currentNode=this.head
+                while(counter<this.size){
+                    console.log(currentNode)
+                    currentNode=currentNode.next
+                    counter++;
+                }
+            }
+        }
+        let list=new List(200)
+        list.addNode(300)
+        list.addNode(400)
+        list.addNode(500)
+        list.addNode(600)
+        list.addNode(700)
+        list.traversing()
+        //console.log(list)
+
+        
+
+    </script>
+</body>
+
+</html>

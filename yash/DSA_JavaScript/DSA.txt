@@ -60,5 +60,16 @@ Map (=>)
 
 Set
     Almost a array but it remove duplicate value 
-    it has our own feature and property        
+    it has our own feature and property   
+
+Linked List
+    It's work on Nodes
+    it has value and next ## Next: address of next node ( |value|Next|--->|value2|Next|--->|value3|Next| ) 
+    first node is head and last node is tail 
+        Head :first node
+        Tail : last node
+        Noda: value | next
+        next: #address on next value 
+        lead node: prevous node
+    in javascript it work on object form     
 

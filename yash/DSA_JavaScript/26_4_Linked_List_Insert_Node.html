@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Insert Node</title>
+</head>
+
+<body>
+    <h1>Linked List Insert Node</h1>
+    
+    <script>
+        class List{
+            constructor (data){
+                this.head={
+                    value:data,
+                    next:null
+                }
+                this.tail=this.head    
+                this.size=1
+            }
+            addNode(data){
+                let newNode={
+                    value:data,
+                    next:null
+                }
+                this.tail.next=newNode
+                this.tail=newNode
+                this.size++
+            }
+            traversing(){
+                let counter=0
+                let currentNode=this.head
+                while(counter<this.size){
+                    console.log(currentNode)
+                    currentNode=currentNode.next
+                    counter++;
+                }
+            }
+            removeNode(index){
+                let counter=1
+                let leadNode=this.head
+                if(index===1){                    
+                    this.head=this.head.next                    
+                }
+                else{
+                    while(counter<index-1){
+                        leadNode=leadNode.next
+                        counter++
+                    }
+                    let nextNode=leadNode.next.next
+                    leadNode.next=nextNode
+                    console.log(leadNode)
+                }
+            }
+            insertNode(index,value){
+                let counter=1
+                let currentNode=this.head
+                while(index<counter){
+                    currentNode=currentNode.next
+                    counter++
+                }
+                let nextnode=currentNode.next
+                currentNode.next={
+                    value:value,
+                    next:nextnode
+                }
+            }
+        }
+        let list=new List(200)
+        list.addNode(300)
+        list.addNode(400)
+        list.addNode(500)
+        list.addNode(600)
+        list.addNode(700)
+        //list.traversing()
+        // list.removeNode(4)
+        // list.removeNode(1)
+        // list.removeNode(3)
+       // list.insertNode(2,22222)
+        list.insertNode(3,5000)
+        console.log(list)
+
+        
+
+    </script>
+</body>
+
+</html>
