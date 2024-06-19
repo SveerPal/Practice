@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET</title>
+</head>
+
+<body>
+    <h1>SET</h1>
+    
+    <script>
+
+        let data = new Set(["Yash","Akhil","Yash"])
+        // let item = ["Yash","Akhil","Yash"]
+        // console.log(item)
+        data.add("Prince")
+        data.add("Yash") //will not add in set because of duplicate
+         console.log(data)
+         
+         console.log(data.has('Akhil'))
+         console.log(data.size)
+         console.log(data.delete("Yash"))
+         console.log(data)
+         console.log(data.keys())
+         console.log(data.values())
+         console.log(data.entries())
+        
+        data.forEach((val,key)=>{
+            console.log(`Key is ${key} and Value is ${val}`)
+            
+        })
+        
+        
+        
+
+    </script>
+</body>
+
+</html>
