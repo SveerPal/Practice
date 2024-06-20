@@ -22,6 +22,23 @@ yash/laravel/laravelvuejs/.env
 yash/laravel/laravel-event-example
 
 
+yash/laravel/ecommerce-app/node_modules
+yash/laravel/ecommerce-app/public/hot
+yash/laravel/ecommerce-app/public/storage
+yash/laravel/ecommerce-app/storage/*.key
+yash/laravel/ecommerce-app/vendor
+yash/laravel/ecommerce-app/.env
+yash/laravel/ecommerce-app/.env.backup
+yash/laravel/ecommerce-app/.phpunit.result.cache
+yash/laravel/ecommerce-app/docker-compose.override.yml
+yash/laravel/ecommerce-app/Homestead.json
+yash/laravel/ecommerce-app/Homestead.yaml
+yash/laravel/ecommerce-app/npm-debug.log
+yash/laravel/ecommerce-app/yarn-error.log
+yash/laravel/ecommerce-app/.idea
+yash/laravel/ecommerce-app/.vscode
+
+
 
 
 
