@@ -67,7 +67,19 @@
                     next:nextnode
                 }
             }
-            searchNode(){
+            searchNode(data){
+                let result= undefined;
+                let lead= this.head;
+                let loop=true;
+                while(loop){
+                    lead=lead.next;
+                    loop=!!lead;
+                    if(loop && lead.value===data){
+                        loop=false
+                        result=lead
+                    }
+                }
+                console.log(result)
                 
             }
         }
@@ -82,7 +94,7 @@
         // list.removeNode(1)
         // list.removeNode(3)
         list.insertNode(2,22222)
-        list.insertNode(3,5000)
+        list.searchNode(500)
         console.log(list)
 
         
