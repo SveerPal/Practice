@@ -73,3 +73,5 @@ Linked List
         lead node: prevous node
     in javascript it work on object form     
 
+Tree:
+
