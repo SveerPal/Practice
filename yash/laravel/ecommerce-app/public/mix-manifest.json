@@ -1,0 +1,10 @@
+{
+    "/backend/css/main.css": "/backend/css/main.css",
+    "/backend/css/main.min.css": "/backend/css/main.min.css",
+    "/backend/images/banner.jpg": "/backend/images/banner.jpg",
+    "/backend/js/bootstrap.min.js": "/backend/js/bootstrap.min.js",
+    "/backend/js/jquery-3.7.0.min.js": "/backend/js/jquery-3.7.0.min.js",
+    "/backend/js/main.js": "/backend/js/main.js",
+    "/backend/js/plugins/chart.js": "/backend/js/plugins/chart.js",
+    "/backend/js/plugins/jquery.dataTables.min.js": "/backend/js/plugins/jquery.dataTables.min.js"
+}
