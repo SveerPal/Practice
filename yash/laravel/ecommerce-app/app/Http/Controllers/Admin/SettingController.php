@@ -13,7 +13,7 @@ class SettingController extends Controller
      */
     public function index()
     {
-        $this->setPageTitle('Settings', 'Manage Settings');
+        //$this->setPageTitle('Settings', 'Manage Settings');
         return view('admin.settings.index');
     }
     /**
