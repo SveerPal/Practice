@@ -10,7 +10,7 @@
     </div>
     <ul class="app-menu">
         <li>
-            <a class="app-menu__item active" href="dashboard.html">
+            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.dashboard' ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
                 <i class="app-menu__icon bi bi-speedometer"></i>
                 <span class="app-menu__label">Dashboard</span>
             </a>
@@ -36,7 +36,8 @@
 
 
         <li>
-            <a class="app-menu__item" href="#"><i class="app-menu__icon bi bi-gear"></i>
+            <a class="app-menu__item {{ Route::currentRouteName() == 'admin.settings' ? 'active' : '' }}" href="{{ route('admin.settings') }}">
+                <i class="app-menu__icon bi bi-gear"></i>
                 <span class="app-menu__label">Settings</span>
             </a>
         </li>

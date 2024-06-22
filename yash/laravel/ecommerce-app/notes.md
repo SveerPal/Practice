@@ -22,3 +22,22 @@ We will create a new folder named admin inside resources/views folder. Inside ad
 Let’s create a folder inside resources/admin folder called partials and add two new files named header.blade.php and sidebar.blade.php.
 Inside resources/admin folder, create a new folder named dashboard and add a new file called index.blade.php
 	
+
+config/auth.php
+	'providers' => [
+		'users' => [
+			'driver' => 'eloquent',
+			'model' => App\Models\User::class,
+		],
+	],
+
+php artisan make:model Models\Admin -m
+php artisan make:seed AdminsTableSeeder		
+
+in admins migration 
+app/Models/Admin.php
+AdminsTableSeeder class from database/seeds
+php artisan migrate --seed
+
+php artisan make:model Models\Setting -m
+php artisan make:seed SettingsTableSeeder
