@@ -2,9 +2,17 @@
 
 namespace App\Exceptions;
 
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Throwable;
+
+use Exception;
+use Request;
+use Response;
+use Illuminate\Support\Arr;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+
+use Throwable;
+
+
 
 class Handler extends ExceptionHandler
 {
@@ -39,7 +47,28 @@ class Handler extends ExceptionHandler
             //
         });
     }
+    /**
+     * Report or log an exception.
+     *
+     * @param  \Exception  $exception
+     * @return void
+     */
+    public function report(Throwable $exception)
+    {
+        parent::report($exception);
+    }
 
+    /**
+     * Render an exception into an HTTP response.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Exception  $exception
+     * @return \Illuminate\Http\Response
+     */
+    public function render($request, Throwable $exception)
+    {
+        return parent::render($request, $exception);
+    }
     /**
      * @param \Illuminate\Http\Request $request
      * @param AuthenticationException $exception
@@ -50,7 +79,8 @@ class Handler extends ExceptionHandler
         if ($request->expectsJson()) {
             return response()->json(['message' => $exception->getMessage()], 401);
         }
-        $guard = array_get($exception->guards(), 0);
+        $guard = Arr::get($exception->guards(), 0);
+        
         switch ($guard) {
             case 'admin':
                 $login = 'admin.login';
