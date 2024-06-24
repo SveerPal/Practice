@@ -59,7 +59,8 @@ class AdminController extends BaseController
      */
     public function edit($id)
     {
-        //
+        $this->setPageTitle('Profile', 'Edit Profile');
+        return view('admin.admins.edit');
     }
 
     /**
