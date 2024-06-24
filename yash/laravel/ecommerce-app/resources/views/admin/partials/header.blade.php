@@ -69,8 +69,8 @@
             <i class="bi bi-gear me-2 fs-5"></i> Settings
           </a>
         </li>
-        <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-gear me-2 fs-5"></i> Settings</a></li>
-        <li><a class="dropdown-item" href="page-user.html"><i class="bi bi-person me-2 fs-5"></i> Profile</a></li>
+        
+        <li><a class="dropdown-item" href="{{ route('admin.profile') }}"><i class="bi bi-person me-2 fs-5"></i> Profile</a></li>
         <li><a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a>
         </li>
       </ul>
