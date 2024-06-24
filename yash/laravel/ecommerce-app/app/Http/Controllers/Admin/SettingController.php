@@ -31,7 +31,7 @@ class SettingController extends BaseController
             if (config('settings.site_logo') != null) {
                 $this->deleteOne(config('settings.site_logo'));
             }
-            $logo = $this->uploadOne($request->file('site_logo'), 'img');
+            $logo = $this->uploadOne($request->file('site_logo'), 'logo');
             Setting::set('site_logo', $logo);
 
         } elseif ($request->has('site_favicon') && ($request->file('site_favicon') instanceof UploadedFile)) {
@@ -39,7 +39,7 @@ class SettingController extends BaseController
             if (config('settings.site_favicon') != null) {
                 $this->deleteOne(config('settings.site_favicon'));
             }
-            $favicon = $this->uploadOne($request->file('site_favicon'), 'img');
+            $favicon = $this->uploadOne($request->file('site_favicon'), 'logo');
             Setting::set('site_favicon', $favicon);
 
         } else {
