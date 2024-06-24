@@ -1,5 +1,6 @@
 <?php
 
+Auth::routes();
 Route::group(['prefix'  =>  'admin'], function () {
     
     Route::get('login', 'Admin\LoginController@showLoginForm')->name('admin.login');
@@ -11,7 +12,7 @@ Route::group(['prefix'  =>  'admin'], function () {
         Route::get('/', function () {
             return view('admin.dashboard.index');
         })->name('admin.dashboard');
-        
+
         //Setting
         Route::get('/settings', 'Admin\SettingController@index')->name('admin.settings');
         Route::post('/settings', 'Admin\SettingController@update')->name('admin.settings.update');

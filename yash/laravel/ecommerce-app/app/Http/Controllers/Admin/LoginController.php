@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
+
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
@@ -56,13 +57,13 @@ class LoginController extends Controller
         return back()->withInput($request->only('email', 'remember'));
     }
     /**
- * @param Request $request
- * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
- */
-public function logout(Request $request)
-{
-    Auth::guard('admin')->logout();
-    $request->session()->invalidate();
-    return redirect()->route('admin.login');
-}
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function logout(Request $request)
+    {
+        Auth::guard('admin')->logout();
+        $request->session()->invalidate();
+        return redirect()->route('admin.login');
+    }
 }
