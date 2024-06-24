@@ -14,9 +14,9 @@ trait UploadAble
 {
     /**
      * @param UploadedFile $file
-     * @param null $folder
+     * @param 'null' $folder
      * @param string $disk
-     * @param null $filename
+     * @param 'null' $filename
      * @return false|string
      */
     public function uploadOne(UploadedFile $file, $folder = null, $disk = 'public', $filename = null)
@@ -31,7 +31,7 @@ trait UploadAble
     }
 
     /**
-     * @param null $path
+     * @param 'null' $path
      * @param string $disk
      */
     public function deleteOne($path = null, $disk = 'public')

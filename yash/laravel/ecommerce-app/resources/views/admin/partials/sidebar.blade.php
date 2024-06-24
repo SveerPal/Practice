@@ -4,8 +4,8 @@
     <div class="app-sidebar__user"><img class="app-sidebar__user-avatar"
             src="https://randomuser.me/api/portraits/men/1.jpg" alt="User Image">
         <div>
-            <p class="app-sidebar__user-name">{{ Auth::user()->name; }}</p>
-            <p class="app-sidebar__user-designation">{{ Auth::user()->role; }}</p>
+            <p class="app-sidebar__user-name">{{ Auth::user()->name }}</p>
+            <p class="app-sidebar__user-designation">{{ Auth::user()->role }}</p>
         </div>
     </div>
     <ul class="app-menu">
