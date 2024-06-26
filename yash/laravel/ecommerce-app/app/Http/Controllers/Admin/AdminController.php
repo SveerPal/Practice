@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Http\Controllers\BaseController;
@@ -52,8 +53,9 @@ class AdminController extends BaseController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
+        $id=Auth::id();
         $this->setPageTitle('Profile', 'Edit Profile');
         return view('admin.admins.edit', ['row' => Admin::find($id)]);
     }
@@ -62,12 +64,13 @@ class AdminController extends BaseController
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,)
     {
-        //
+        die("s");
+        echo $id=Auth::id();
+        die;
     }
 
     /**

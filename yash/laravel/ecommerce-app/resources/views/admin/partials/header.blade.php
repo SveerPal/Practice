@@ -70,7 +70,7 @@
           </a>
         </li>
         
-        <li><a class="dropdown-item" href="{{ route('admin.profile.edit',['id'=>Auth::id()]) }}"><i class="bi bi-person me-2 fs-5"></i> Profile</a></li>
+        <li><a class="dropdown-item" href="{{ route('admin.profile.edit') }}"><i class="bi bi-person me-2 fs-5"></i> Profile</a></li>
         <li><a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a>
         </li>
       </ul>

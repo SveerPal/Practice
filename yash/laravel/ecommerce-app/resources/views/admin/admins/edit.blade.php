@@ -11,7 +11,7 @@
 @include('admin.partials.flash')
 <div class="row user">
     <div class="tile">        
-        <form action="{{ Route('admin.profile.update',['id'=>$row->id]) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.profile.update') }}" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <label>Name</label>
