@@ -37,18 +37,13 @@ class AdminController extends BaseController
      */
     public function store(Request $request)
     {
-        //
-    }
+        $this->validate($request, [
+            'name' => 'required|min:3|max:50',
+            'phone' => 'email',
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+            'password' => 'required|confirmed|min:6',
+        ]);
+        die("ddddd");
     }
 
     /**
@@ -60,7 +55,7 @@ class AdminController extends BaseController
     public function edit($id)
     {
         $this->setPageTitle('Profile', 'Edit Profile');
-        return view('admin.admins.edit');
+        return view('admin.admins.edit', ['row' => Admin::find($id)]);
     }
 
     /**

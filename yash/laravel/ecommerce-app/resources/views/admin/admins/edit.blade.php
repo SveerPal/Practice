@@ -11,36 +11,40 @@
 @include('admin.partials.flash')
 <div class="row user">
     <div class="tile">        
-        <form>
+        <form action="{{ Route('admin.profile.update',['id'=>$row->id]) }}" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <label>Name</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="name" value="{{ old('name',$row->name) }}">
                 </div>
                 <div class="col-md-6 mb-4">
                     <label>Phone</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="phone" value="{{ old('phone',$row->phone) }}">
                 </div>            
                 <div class="col-md-6 mb-4">
                     <label>Email</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="email" value="{{ old('email',$row->email) }}" readonly disabled>
                 </div>                
                 <div class="col-md-6 mb-4">
                     <label>Role</label>
-                    <input class="form-control" type="text">
+                    <select class="form-control" name="role">
+                        <option value="">Select</option>
+                        <option value="1">Super Admin</option>
+                        <option value="2">Admin</option>
+                    </select>
                 </div>                
                 <div class="col-md-6 mb-4">
                     <label>Password</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="password">
                 </div>                
                 <div class="col-md-6 mb-4">
                     <label>Confirm Password</label>
-                    <input class="form-control" type="text">
+                    <input class="form-control" type="text" name="password_confirmation">
                 </div>
             </div>
             <div class="row mb-10">
                 <div class="col-md-12">
-                    <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>
+                    <button class="btn btn-primary" type="submit"><i class="bi bi-check-circle-fill me-2"></i>
                         Update</button>
                 </div>
             </div>
