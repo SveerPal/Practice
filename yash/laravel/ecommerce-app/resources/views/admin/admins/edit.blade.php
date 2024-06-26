@@ -12,41 +12,36 @@
 <div class="row user">
     <div class="tile">        
         <form>
-            <div class="row mb-4">
-                <div class="col-md-4">
-                    <label>First Name</label>
-                    <input class="form-control" type="text">
-                </div>
-                <div class="col-md-4">
-                    <label>Last Name</label>
-                    <input class="form-control" type="text">
-                </div>
-            </div>
             <div class="row">
-                <div class="col-md-8 mb-4">
+                <div class="col-md-6 mb-4">
+                    <label>Name</label>
+                    <input class="form-control" type="text">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label>Phone</label>
+                    <input class="form-control" type="text">
+                </div>            
+                <div class="col-md-6 mb-4">
                     <label>Email</label>
                     <input class="form-control" type="text">
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-md-8 mb-4">
-                    <label>Mobile No</label>
+                </div>                
+                <div class="col-md-6 mb-4">
+                    <label>Role</label>
                     <input class="form-control" type="text">
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-md-8 mb-4">
-                    <label>Office Phone</label>
+                </div>                
+                <div class="col-md-6 mb-4">
+                    <label>Password</label>
                     <input class="form-control" type="text">
-                </div>
-                <div class="clearfix"></div>
-                <div class="col-md-8 mb-4">
-                    <label>Home Phone</label>
+                </div>                
+                <div class="col-md-6 mb-4">
+                    <label>Confirm Password</label>
                     <input class="form-control" type="text">
                 </div>
             </div>
             <div class="row mb-10">
                 <div class="col-md-12">
                     <button class="btn btn-primary" type="button"><i class="bi bi-check-circle-fill me-2"></i>
-                        Save</button>
+                        Update</button>
                 </div>
             </div>
         </form>
