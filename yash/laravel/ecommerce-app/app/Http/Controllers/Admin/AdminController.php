@@ -32,7 +32,8 @@ class AdminController extends BaseController
         $id = Auth::id();
         $this->validate($request, [
             'name' => 'required|min:3|max:50',
-            'phone' => 'email',
+            'email' => 'required|email|unique:admins',
+            'phone' => 'required|digits:10',
 
             'password' => 'required|confirmed|min:6',
         ]);
