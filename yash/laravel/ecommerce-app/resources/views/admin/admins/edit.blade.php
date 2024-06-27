@@ -10,21 +10,34 @@
 </div>
 @include('admin.partials.flash')
 <div class="row user">
-    <div class="tile">        
-        <form action="{{ route('admin.profile.update') }}" method="post" enctype="multipart/form-data">
+    <div class="tile">
+        <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <label>Name</label>
-                    <input class="form-control" type="text" name="name" value="{{ old('name',$row->name) }}">
+                    <input class="form-control @error('name') is-invalid @enderror" type="text" name="name"
+                        value="{{ old('name', $row->name) }}">
+                    @error('name')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="col-md-6 mb-4">
                     <label>Phone</label>
-                    <input class="form-control" type="text" name="phone" value="{{ old('phone',$row->phone) }}">
-                </div>            
+                    <input class="form-control @error('phone') is-invalid @enderror" type="text" name="phone"
+                        value="{{ old('phone', $row->phone) }}">
+                    @error('phone')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="col-md-6 mb-4">
                     <label>Email</label>
-                    <input class="form-control" type="text" name="email" value="{{ old('email',$row->email) }}" readonly disabled>
-                </div>                
+                    <input class="form-control @error('email') is-invalid @enderror" type="text" name="email"
+                        value="{{ old('email', $row->email) }}" readonly disabled>
+                    @error('email')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="col-md-6 mb-4">
                     <label>Role</label>
                     <select class="form-control" name="role">
@@ -32,14 +45,24 @@
                         <option value="1">Super Admin</option>
                         <option value="2">Admin</option>
                     </select>
-                </div>                
+                    @error('role')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="col-md-6 mb-4">
                     <label>Password</label>
-                    <input class="form-control" type="text" name="password">
-                </div>                
+                    <input class="form-control @error('password') is-invalid @enderror" type="password" name="password">
+                    @error('password')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="col-md-6 mb-4">
                     <label>Confirm Password</label>
-                    <input class="form-control" type="text" name="password_confirmation">
+                    <input class="form-control @error('password_confirmation') is-invalid @enderror" type="password"
+                        name="password_confirmation">
+                    @error('password_confirmation')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
             </div>
             <div class="row mb-10">

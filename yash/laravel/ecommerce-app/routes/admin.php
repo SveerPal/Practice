@@ -19,7 +19,7 @@ Route::group(['prefix'  =>  'admin'], function () {
 
         //Admin Profile
         Route::get('/profile', 'Admin\AdminController@edit')->name('admin.profile.edit');
-        Route::post('/profile-update', 'Admin\AdminController@update')->name('admin.profile.update');
+        Route::post('/profile', 'Admin\AdminController@update')->name('admin.profile.update');
     });
 
     
