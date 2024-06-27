@@ -10,7 +10,11 @@
 </div>
 @include('admin.partials.flash')
 <div class="row user">
-    <div class="tile">
+    <div class="tile">@if ($errors->any())
+   @foreach ($errors->all() as $error)
+      <div>{{$error}}</div>
+   @endforeach
+   @endif
         <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">

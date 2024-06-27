@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Http\Controllers\BaseController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends BaseController
 {
@@ -24,20 +25,27 @@ class AdminController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request  $request 
+     * @return \Illuminate\Http\RedirectResponse
+     * 
      */
     public function update(Request $request)
     {
-        $id = Auth::id();
-        $this->validate($request, [
+       
+        $validator = Validator::make($request->all(), [
             'name' => 'required|min:3|max:50',
             'email' => 'required|email|unique:admins',
-            'phone' => 'required|digits:10',
+            'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
 
             'password' => 'required|confirmed|min:6',
         ]);
-        die("ddddd");
+        if ($validator->fails()) {
+            return redirect('admin/profile')->withErrors($validator)->withInput();
+        }
+        $id = Auth::id();
+
+        return $this->responseRedirectBack('Profile updated successfully.', 'success');
+       
 
 
     }
