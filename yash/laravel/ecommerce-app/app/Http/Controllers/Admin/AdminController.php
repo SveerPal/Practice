@@ -35,25 +35,36 @@ class AdminController extends BaseController
     public function update(Request $request)
     {
         $id = Auth::id();
-        $validator = Validator::make($request->all(), [            
-           
+        $email = Auth::user()->email;
+
+        $validator = Validator::make($request->all(), [
+
             'name' => 'required|min:3|max:50',
-            'email' => 'required|email|unique:admins,'.$id,
+            'email' => 'required|email:rfc,dns|unique:App\Models\Admin,id,' . $id,
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'password' => 'required|confirmed|min:6',
-            
-            
+            'password' => 'nullable|required|confirmed|min:8',
+
+
         ]);
 
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         }
-       
+
         
-        
+        $admin = Admin::find($id);
+
+        $admin->name = $request->input('name');
+        $admin->phone = $request->input('phone');
+        $admin->email = $request->input('email');
+        $admin->role = $request->input('role');        
+        $admin->update();
+        if($request->input('password')){
+            $admin->password =  Hash::make($request->input('password'));
+        }
 
         return $this->responseRedirectBack('Profile updated successfully.', 'success');
-       
+
 
 
     }
