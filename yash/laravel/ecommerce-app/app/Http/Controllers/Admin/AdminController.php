@@ -42,7 +42,7 @@ class AdminController extends BaseController
             'name' => 'required|min:3|max:50',
             'email' => 'required|email:rfc,dns|unique:App\Models\Admin,id,' . $id,
             'phone' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
-            'password' => 'nullable|required|confirmed|min:8',
+            'password' => 'nullable|confirmed|min:8',
 
 
         ]);
