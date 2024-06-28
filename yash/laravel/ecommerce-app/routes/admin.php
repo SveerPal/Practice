@@ -1,29 +1,40 @@
 <?php
 
-Auth::routes();
-Route::group(['prefix'  =>  'admin'], function () {
-    
-    Route::get('login', 'Admin\LoginController@showLoginForm')->name('admin.login');
-    Route::post('login', 'Admin\LoginController@login')->name('admin.login.post');
-    Route::get('logout', 'Admin\LoginController@logout')->name('admin.logout');
+use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\AdminController;
 
+Auth::routes();
+
+Route::group(['prefix' => 'admin'], function () {
+
+    // Login Routes
+    Route::get('login', [LoginController::class, 'showLoginForm'])->name('admin.login');
+    Route::post('login', [LoginController::class, 'login'])->name('admin.login.post');
+    Route::get('logout', [LoginController::class, 'logout'])->name('admin.logout');
 
     Route::group(['middleware' => ['auth:admin']], function () {
+
+        // Dashboard Route
         Route::get('/', function () {
             return view('admin.dashboard.index');
         })->name('admin.dashboard');
 
-        //Setting
-        Route::get('/settings', 'Admin\SettingController@index')->name('admin.settings');
-        Route::post('/settings', 'Admin\SettingController@update')->name('admin.settings.update');
+        // Setting Routes
+        Route::group(['prefix' => 'settings', 'as' => 'admin.settings'], function () {
+            Route::controller(SettingController::class)->group(function () {
+                Route::get('/', 'index')->name('');
+                Route::post('/', 'update')->name('.update');
+            });
+        });
+        
+        // Admin Profile Routes
+        Route::group(['prefix' => 'profile', 'as' => 'admin.profile.'], function () {
+            Route::controller(AdminController::class)->group(function () {
+                Route::get('/', 'edit')->name('edit');
+                Route::post('/', 'update')->name('update');
+            });
+        });
 
-        //Admin Profile
-        Route::get('/profile', 'Admin\AdminController@edit')->name('admin.profile.edit');
-        Route::post('/profile', 'Admin\AdminController@update')->name('admin.profile.update');
     });
-
-    
-    
 });
-
-
