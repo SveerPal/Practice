@@ -10,11 +10,7 @@
 </div>
 @include('admin.partials.flash')
 <div class="row user">
-    <div class="tile">@if ($errors->any())
-   @foreach ($errors->all() as $error)
-      <div>{{$error}}</div>
-   @endforeach
-   @endif
+    <div class="tile">
         <form action="{{ route('admin.profile.update') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
@@ -37,7 +33,7 @@
                 <div class="col-md-6 mb-4">
                     <label>Email</label>
                     <input class="form-control @error('email') is-invalid @enderror" type="text" name="email"
-                        value="{{ old('email', $row->email) }}" readonly disabled>
+                        value="{{ old('email', $row->email) }}" >
                     @error('email')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
