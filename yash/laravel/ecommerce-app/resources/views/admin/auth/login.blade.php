@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/main.css') }}" />
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <title>Login - {{ config('app.name') }}</title>
+    <title>Login - {{-- config('app.name') --}}{{ config('settings.site_name') }}</title>
 </head>
 
 <body>
@@ -17,7 +17,13 @@
     </section>
     <section class="login-content">
         <div class="logo">
-            <h1>{{ config('app.name') }}</h1>
+            <h1> 
+            @if (config('settings.site_name'))
+                {{ config('settings.site_name') }}
+            @else
+                {{ config('app.name') }}
+            @endif
+            </h1>
         </div>
         <div class="login-box">
             <form class="login-form" action="{{ route('admin.login.post') }}" method="POST" role="form">
