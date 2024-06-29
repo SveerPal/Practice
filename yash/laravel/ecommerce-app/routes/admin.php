@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ProductCategoryController;
 
 Auth::routes();
 
@@ -36,5 +37,17 @@ Route::group(['prefix' => 'admin'], function () {
             });
         });
 
+        //Product Category
+        Route::group(['prefix' => 'categories', 'as' => 'admin.categories.'], function () {
+            Route::controller(ProductCategoryController::class)->group(function () {
+                Route::get('/', 'index')->name('index');
+            Route::get('/create', 'create')->name('create');
+            Route::post('/store', 'store')->name('store');
+            Route::get('/{id}/edit', 'edit')->name('edit');
+            Route::post('/update', 'update')->name('update');
+            Route::get('/{id}/delete', 'delete')->name('delete');
+            });
+        });
+      
     });
 });
