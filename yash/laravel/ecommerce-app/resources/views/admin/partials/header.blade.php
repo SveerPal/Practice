@@ -1,5 +1,9 @@
 <!-- Navbar-->
-<header class="app-header"><a class="app-header__logo" href="/">{{ config('app.name') }}</a>
+<header class="app-header">
+  <a class="app-header__logo" href="/">
+    {{-- config('app.name') --}}
+    {{ config('settings.site_name') }}
+  </a>
   <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
     aria-label="Hide Sidebar"></a>
   <!-- Navbar Right Menu-->
@@ -69,9 +73,11 @@
             <i class="bi bi-gear me-2 fs-5"></i> Settings
           </a>
         </li>
-        
-        <li><a class="dropdown-item" href="{{ route('admin.profile.edit') }}"><i class="bi bi-person me-2 fs-5"></i> Profile</a></li>
-        <li><a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="bi bi-box-arrow-right me-2 fs-5"></i> Logout</a>
+
+        <li><a class="dropdown-item" href="{{ route('admin.profile.edit') }}"><i class="bi bi-person me-2 fs-5"></i>
+            Profile</a></li>
+        <li><a class="dropdown-item" href="{{ route('admin.logout') }}"><i class="bi bi-box-arrow-right me-2 fs-5"></i>
+            Logout</a>
         </li>
       </ul>
     </li>

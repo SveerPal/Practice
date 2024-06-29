@@ -13,7 +13,7 @@ class SettingsTableSeeder extends Seeder
     protected $settings = [
         [
             'key'                       =>  'site_name',
-            'value'                     =>  'E-Commerce Application',
+            'value'                     =>  'E-Commerce App',
         ],
         [
             'key'                       =>  'site_title',
