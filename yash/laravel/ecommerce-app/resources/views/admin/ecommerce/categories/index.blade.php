@@ -34,18 +34,18 @@
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->slug }}</td>
                                         <td>{{ $category->parent->name }}</td>
-                                        <td class="text-center">
+                                        <td class="text-centerr">
                                             @if ($category->featured == 1)
-                                                <span class="badge badge-success">Yes</span>
+                                                <span class="badge bg-success">Yes</span>
                                             @else
-                                                <span class="badge badge-danger">No</span>
+                                                <span class="badge bg-danger">No</span>
                                             @endif
                                         </td>
-                                        <td class="text-center">
+                                        <td class="text-centerr">
                                             @if ($category->menu == 1)
-                                                <span class="badge badge-success">Yes</span>
+                                                <span class="badge bg-success">Yes</span>
                                             @else
-                                                <span class="badge badge-danger">No</span>
+                                                <span class="badge bg-danger">No</span>
                                             @endif
                                         </td>
                                         <td class="text-center">
@@ -53,8 +53,8 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="btn-group" role="group" aria-label="Second group">
-                                                <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
-                                                <a href="{{ route('admin.categories.delete', $category->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
+                                                <a href="{{ route('admin.categories.delete', $category->id) }}" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>
