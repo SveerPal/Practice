@@ -42,8 +42,8 @@
                     <label>Role</label>
                     <select class="form-control" name="role">
                         <option value="">Select</option>
-                        <option @if (old('role', $row->role)==1) {{ 'selected' }} @endif value="1">Super Admin</option>
-                        <option @if (old('role', $row->role)==2) {{ 'selected' }} @endif value="2">Admin</option>
+                        <option @if (old('role', $row->role)=='Super Admin') {{ 'selected' }} @endif value="Super Admin">Super Admin</option>
+                        <option @if (old('role', $row->role)=='Admin') {{ 'selected' }} @endif value="Admin">Admin</option>
                     </select>
                     @error('role')
                         <div class="text-danger">{{ $message }}</div>

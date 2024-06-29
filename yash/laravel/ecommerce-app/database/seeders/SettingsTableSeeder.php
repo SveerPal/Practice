@@ -99,6 +99,36 @@ class SettingsTableSeeder extends Seeder
             'key'                       =>  'paypal_secret_id',
             'value'                     =>  '',
         ],
+        [
+            'key'                       =>  'smtp_host',
+            'value'                     =>  'smtp.google.com',
+        ],
+        [
+            'key'                       =>  'smtp_user_name',
+            'value'                     =>  'test@gmail.com',
+        ],
+        [
+            'key'                       =>  'smtp_password',
+            'value'                     =>  'Admin@123',
+        ],
+        [
+            'key'                       =>  'smtp_from_name',
+            'value'                     =>  'Test',
+        ],
+        [
+            'key'                       =>  'smtp_from_email',
+            'value'                     =>  'abc@gmail.com',
+        ],
+        [
+            'key'                       =>  'smtp_type',
+            'value'                     =>  'ssl',
+        ],
+        [
+            'key'                       =>  'smtp_port',
+            'value'                     =>  '465',
+        ],
+        
+        
     ];
     
     /**

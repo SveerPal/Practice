@@ -19,6 +19,7 @@
                 <li class="nav-item"><a class="nav-link" href="#social-links" data-bs-toggle="tab">Social Links</a></li>
                 <li class="nav-item"><a class="nav-link" href="#analytics" data-bs-toggle="tab">Analytics</a></li>
                 <li class="nav-item"><a class="nav-link" href="#payments" data-bs-toggle="tab">Payments</a></li>
+                <li class="nav-item"><a class="nav-link" href="#smtp" data-bs-toggle="tab">SMTP</a></li>
             </ul>
         </div>
     </div>
@@ -41,6 +42,9 @@
             </div>
             <div class="tab-pane fade" id="payments">
                 @include('admin.settings.includes.payments')
+            </div>
+            <div class="tab-pane fade" id="smtp">
+                @include('admin.settings.includes.smtp')
             </div>
         </div>
     </div>
