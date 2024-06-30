@@ -82,4 +82,5 @@ Tree:
             PostOrder:left=>right=>root
             InOrder:left=>root>right
         BFS:Breadth First Search
+            it is travle by lavel 0,1,2 from top to bottom both left and right
 

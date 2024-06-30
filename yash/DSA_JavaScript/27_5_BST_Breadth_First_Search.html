@@ -82,6 +82,21 @@
                     console.log(root.value)
                 }
             }
+            bfsTraversing(root){
+                let queue=[]
+                queue.push(root)
+                while(queue.length){
+                    let current=queue.shift()
+                    if(current.left){
+                        queue.push(current.left)
+                    }
+                    if(current.right){
+                        queue.push(current.right)
+                    }
+                    console.log(current.value)
+                }
+            }
+            
 
         }
 
@@ -97,7 +112,8 @@
         //console.log( bst.search(bst.root,1))
        // bst.preOrder(bst.root)
       //  bst.inOrder(bst.root)
-        bst.postOrder(bst.root)
+      //  bst.postOrder(bst.root)
+        bst.bfsTraversing(bst.root)
         console.log(bst)
 
     </script>
