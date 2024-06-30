@@ -74,4 +74,6 @@ Linked List
     in javascript it work on object form     
 
 Tree:
+    Binary Tree: its a non linear data structer one node have maximum 2 node 
+        left node small compare tor right node
 
