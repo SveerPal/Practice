@@ -76,4 +76,10 @@ Linked List
 Tree:
     Binary Tree: its a non linear data structer one node have maximum 2 node 
         left node small compare tor right node
+        Tree Traersing is two type DFS,BFS
+        DFS:Depth First Search
+            Preorder: root=>left=>right
+            PostOrder:left=>right=>root
+            InOrder:left=>root>right
+        BFS:Breadth First Search
 
