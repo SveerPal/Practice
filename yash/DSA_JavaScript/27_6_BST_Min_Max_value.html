@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary Search Tree Breadth First Search </title>
+    <title>Binary Search Tree Min Max Value </title>
 </head>
 
 <body>
-    <h1>Binary Search Tree Breadth First Search </h1>
+    <h1>Binary Search Tree Min Max Value </h1>
 
     <script>
         class Node {
@@ -96,7 +96,20 @@
                     console.log(current.value)
                 }
             }
-            
+            minValue(root){
+                if(!root.left){
+                    return root
+                }else{
+                    return this.minValue(root.left)
+                }
+            }
+            maxValue(root){
+                if(!root.right){
+                    return root
+                }else{
+                    return this.maxValue(root.right)
+                }
+            }
 
         }
 
@@ -113,7 +126,9 @@
        // bst.preOrder(bst.root)
       //  bst.inOrder(bst.root)
       //  bst.postOrder(bst.root)
-        bst.bfsTraversing(bst.root)
+     //   bst.bfsTraversing(bst.root)
+        console.log(bst.minValue(bst.root))
+        console.log(bst.maxValue(bst.root))
         console.log(bst)
 
     </script>
