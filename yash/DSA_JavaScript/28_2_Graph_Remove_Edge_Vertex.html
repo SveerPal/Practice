@@ -49,12 +49,20 @@ n<!DOCTYPE html>
                
                 this.data[v1]=this.data[v1].filter((item) =>{
                     return item!=v2;
-                })
+                });
                 this.data[v2]=this.data[v2].filter((item) =>{
                    
                     return item!=v1;
-                })
-
+                });
+            }
+            removeVertex(vertex){
+                if(!this.data[vertex]){
+                    return ;
+                }
+                for(let item of this.data[vertex]){
+                    this.removeEdge(vertex,item)
+                }
+                delete this.data[vertex]
             }
         }
     
@@ -67,8 +75,11 @@ n<!DOCTYPE html>
        graph.addEdges('A','B')
        graph.addEdges('B','C')
        graph.addEdges('B','D')
-       console.log(graph)
-       graph.removeEdge('A','B')
+      // console.log(graph)
+       //graph.removeEdge('A','B')
+       //console.log(graph)
+       graph.removeVertex('A')
+       graph.removeVertex('D')
        console.log(graph)
 
     </script>
