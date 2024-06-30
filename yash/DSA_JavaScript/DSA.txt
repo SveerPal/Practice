@@ -84,3 +84,15 @@ Tree:
         BFS:Breadth First Search
             it is travle by lavel 0,1,2 from top to bottom both left and right
 
+Graph: 
+    is non linear data structer
+    graph is made with the help of node and edges
+    Directed: with the arrow
+    Indirected: with the bond or single line
+    Node Graph: without edge with multiple node with out connection
+    Null Graph: wihtout edge and only one node
+    bi directional graph: both side arror directed
+
+    Adjaceny Matrix Graph: use array to represent graph
+    Adjaceny List Graph: array,object or link list or queue can be used 
+

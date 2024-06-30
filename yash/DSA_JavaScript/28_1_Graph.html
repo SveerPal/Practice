@@ -1,0 +1,64 @@
+n<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Graph and add vertex </title>
+</head>
+
+<body>
+    <h1>Make Graph and add vertex </h1>
+
+    <script>
+        //Adjancency Matrix
+//         let dataMatrix=[
+//               a,b,c,d
+//            a= [1,0,1,1]
+//            b= [1,0,1,1]
+//            c= [1,0,1,1]
+//            d= [1,0,1,1]
+//         ]
+// //Adjencey List
+//         let DataList=[
+//             'a':[b,c]
+//             'b':[a,c,d]
+//             'c':[a,b]
+//             'd':[b]
+//         ]
+        class Graph {
+            constructor(val) {
+                this.data = {}
+            }
+            addVertex(node){
+                if(!this.data[node]){
+                    this.data[node]=[]
+                }
+            }
+            addEdges(v1,v2){
+                if(!this.data[v1]){
+                    this.addVertex(v1)
+                }
+                if(!this.data[v2]){
+                    this.addVertex(v2)
+                }
+                this.data[v1].push(v2)
+                this.data[v2].push(v1)
+            }
+        }
+    
+       let graph=new Graph()
+       graph.addVertex('A')
+       graph.addVertex('B')
+       graph.addVertex('C')
+       graph.addVertex('D')
+       graph.addEdges('A','C')
+       graph.addEdges('A','B')
+       graph.addEdges('B','C')
+       graph.addEdges('B','D')
+       console.log(graph)
+
+    </script>
+</body>
+
+</html>
