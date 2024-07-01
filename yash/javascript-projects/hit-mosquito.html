@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hit Mosquito</title>
     <style>
-        .playground{
+        .playground {
             position: relative;
             background-color: green;
-            height: 500px;
-            width: 500px;
+            height: 550px;
+            width: 550px;
             float: left;
         }
-        .mosquito{
+
+        .mosquito {
             position: relative;
             height: 30px;
         }
     </style>
 </head>
+
 <body>
     <div class="playground">
-        <img class="mosquito" onclick="hitMosquito()" src="https://media.istockphoto.com/id/1317059852/photo/aedes-mosquitoe-is-sucking-blood-on-human-skin.jpg?s=1024x1024&w=is&k=20&c=2LtDgHhBRdLIIYS_mJbcA2KHHc6LhUl1KSVzZd9KNPY=" alt="" srcset="">
+        <img class="mosquito" onclick="hitMosquito()"
+            src="https://media.istockphoto.com/id/1317059852/photo/aedes-mosquitoe-is-sucking-blood-on-human-skin.jpg?s=1024x1024&w=is&k=20&c=2LtDgHhBRdLIIYS_mJbcA2KHHc6LhUl1KSVzZd9KNPY="
+            alt="" srcset="">
     </div>
     <div class="controls">
-        <h3><span>Total</span><span class="total"></span></h3>
-        <button type="button">Start</button>
+        <h3><span>Total</span><span class="totalHit"></span></h3>
+        <button type="button" onclick="startGame()">Start</button>
     </div>
     <script>
+         let totalHit = 0;
+        function startGame() {
+            let mosquito = document.querySelector('.mosquito')
+            let time = setInterval(() => {
+                var i = Math.floor(Math.random() * 500) + 1
+                var j = Math.floor(Math.random() * 500) + 1
+                mosquito.style.left = i + "px"
+                mosquito.style.top = j + "px"
+            }, 2000)
+            setTimeout(() => {
+                clearTimeout(time)
+            },30000)
+           
+            
 
+        }
+        function hitMosquito() {
+                totalHit= totalHit+1;
+               document.querySelector('.totalHit').textContent = totalHit;
+
+
+
+            }
     </script>
 </body>
+
 </html>
