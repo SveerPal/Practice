@@ -4,10 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hit Mosquito</title>
+    <style>
+        .playground{
+            position: relative;
+            background-color: green;
+            height: 500px;
+            width: 500px;
+            float: left;
+        }
+        .mosquito{
+            position: relative;
+            height: 30px;
+        }
+    </style>
 </head>
 <body>
+    <div class="playground">
+        <img class="mosquito" onclick="hitMosquito()" src="https://media.istockphoto.com/id/1317059852/photo/aedes-mosquitoe-is-sucking-blood-on-human-skin.jpg?s=1024x1024&w=is&k=20&c=2LtDgHhBRdLIIYS_mJbcA2KHHc6LhUl1KSVzZd9KNPY=" alt="" srcset="">
+    </div>
+    <div class="controls">
+        <h3><span>Total</span><span class="total"></span></h3>
+        <button type="button">Start</button>
+    </div>
     <script>
-        
+
     </script>
 </body>
 </html>
