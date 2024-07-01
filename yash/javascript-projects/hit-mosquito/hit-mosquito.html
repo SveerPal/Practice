@@ -8,14 +8,18 @@
     <style>
         .playground {
             position: relative;
-            background-color: green;
-            height: 550px;
-            width: 550px;
+            background-image: url(wheat.png);
+            height: 100vh;
+            width: 50%;
             float: left;
+            background-repeat: no-repeat;
+            background-size: auto;
         }
 
         .mosquito {
             position: relative;
+            background-repeat: no-repeat;
+            background-size: auto;
             height: 30px;
         }
     </style>
@@ -23,16 +27,14 @@
 
 <body>
     <div class="playground">
-        <img class="mosquito" onclick="hitMosquito()"
-            src="https://media.istockphoto.com/id/1317059852/photo/aedes-mosquitoe-is-sucking-blood-on-human-skin.jpg?s=1024x1024&w=is&k=20&c=2LtDgHhBRdLIIYS_mJbcA2KHHc6LhUl1KSVzZd9KNPY="
-            alt="" srcset="">
+        <img class="mosquito" onclick="hitMosquito()" src="mosquito.png" alt="" srcset="">
     </div>
     <div class="controls">
         <h3><span>Total</span><span class="totalHit"></span></h3>
         <button type="button" onclick="startGame()">Start</button>
     </div>
     <script>
-         let totalHit = 0;
+        let totalHit = 0;
         function startGame() {
             let mosquito = document.querySelector('.mosquito')
             let time = setInterval(() => {
@@ -43,18 +45,18 @@
             }, 2000)
             setTimeout(() => {
                 clearTimeout(time)
-            },30000)
-           
-            
+            }, 30000)
+
+
 
         }
         function hitMosquito() {
-                totalHit= totalHit+1;
-               document.querySelector('.totalHit').textContent = totalHit;
+            totalHit = totalHit + 1;
+            document.querySelector('.totalHit').textContent = totalHit;
 
 
 
-            }
+        }
     </script>
 </body>
 
