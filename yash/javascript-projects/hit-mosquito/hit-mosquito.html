@@ -9,7 +9,8 @@
         body {
             margin: 0 auto;
         }
-        .wrapper{
+
+        .wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
         }
@@ -42,15 +43,22 @@
             flex-direction: column;
 
         }
-        .wrapper2{
+
+        .wrapper2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 10px;
         }
-        button{
+
+        button {
             padding: 0 auto;
+            padding: 5px 10px;
+            background: burlywood;
+            border-radius: 100%;
+            box-sizing: content-box;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
 </head>
 
 <body>
@@ -59,18 +67,19 @@
             <img class="mosquito" onclick="hitMosquito()" src="mosquito.png" alt="" srcset="">
         </div>
         <div class="controls">
-            <h1>Count Down</h1>
-            <h2 class="countdown">00:00:00</h2>
+            <!-- <h1>Count Down</h1> -->
+            <h1 class="countdown">00:00</h1>
             <div class="wrapper2p">
                 <h3><span>Your Score: </span><span class="totalHit">0</span></h3>
-                <button type="button" onclick="startGame()">Start</button>
+                <button type="button" class="start" onclick="startGame(this,event)" >Start</button>
             </div>
         </div>
     </div>
     <script>
         let totalHit = 0;
         let = duration = 59000
-        function startGame() {
+        function startGame(ele,e) {
+            this.setAttribute('disabled');
             let mosquito = document.querySelector('.mosquito')
             let time = setInterval(() => {
                 var i = Math.floor(Math.random() * 90) + 1
@@ -109,16 +118,55 @@
                 var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                 // Display the result in the element with id="demo"
-                document.querySelector(".countdown").innerHTML = days + "d " + hours + "h "
-                    + minutes + "m " + seconds + "s ";
+                //document.querySelector(".countdown").innerHTML = days + "d " + hours + "h "   + minutes + "m " + seconds + "s ";
+                document.querySelector(".countdown").innerHTML = minutes + "m " + seconds + "s ";
 
                 // If the count down is finished, write some text
                 if (distance < 0) {
                     clearInterval(x);
-                    document.querySelector(".countdown").innerHTML = "EXPIRED";
+                    getConfetti()
+                    document.querySelector(".countdown").innerHTML = "TIME UP";
                 }
             }, 1000);
         }
+
+
+        
+        
+        function randomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        function getConfetti(){
+            const duration = 15 * 1000,
+            animationEnd = Date.now() + duration,
+            defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+            const interval = setInterval(function () {
+            const timeLeft = animationEnd - Date.now();
+
+            if (timeLeft <= 0) {
+                return clearInterval(interval);
+            }
+
+            const particleCount = 50 * (timeLeft / duration);
+
+            // since particles fall down, start a bit higher than random
+            confetti(
+                Object.assign({}, defaults, {
+                    particleCount,
+                    origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+                })
+            );
+            confetti(
+                Object.assign({}, defaults, {
+                    particleCount,
+                    origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+                })
+            );
+        }, 250);
+
+        }
+
     </script>
 </body>
 
