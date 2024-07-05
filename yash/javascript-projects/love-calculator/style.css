@@ -4,9 +4,15 @@
     align-items: center;
     flex-direction: column;
     gap: 29px;
+    text-align: center;
   }
-  .controls > * {
+  input {
     padding: 5px;
     border-radius: 8px;
     height: 25px;
+  }
+  button{
+    padding: 5px;
+    border-radius: 8px;
+    height: 40px;
   }
