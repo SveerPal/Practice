@@ -1,3 +1,6 @@
+body{
+    background: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%); 
+}
 .wrapper {
     display: flex;
     justify-content: center;

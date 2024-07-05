@@ -19,11 +19,14 @@
         <div class="controls">
             <input type="text" class="your_name" placeholder="Enter Your Name" />
             <input type="text" class="your_love_name" placeholder="Enter Your Love Name" />
-            <button type="button" class="calculate">Calculate Now</button>
+            <button type="button" class="calculate" onclick="loveCalculate()">Calculate Now</button>
         </div>
     </div>
     <script>
-
+        function loveCalculate(){
+           let your_name= document.querySelector('.your_name').value;
+           let your_love_name= document.querySelector('.your_love_name').value;
+        }
     </script>
 </body>
 
