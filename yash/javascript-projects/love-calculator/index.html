@@ -31,11 +31,12 @@
            if(your_name && your_love_name){
                 let total=Math.floor(Math.random()*100)
                 let str=(your_name+your_love_name).replace(/\s/g,"")
+                str=str.toLowerCase()
                 console.log(str)
                 if(localStorage.getItem(str)){
                     total=localStorage.getItem(str)
                 }else{
-                    localStorage.getItem(str,total)
+                    localStorage.setItem(str,total)
                 }
                 document.querySelector('.result').innerText=total;
            }else{
