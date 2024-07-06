@@ -15,6 +15,7 @@
         <div class="playground">
             <img class="mosquito" onclick="hitMosquito()" src="love.jpg" alt="" srcset="">
             <h1>Calculate Your Love</h1>
+            <h3 class="result"></h3>
         </div>
         <div class="controls">
             <input type="text" class="your_name" placeholder="Enter Your Name" />
@@ -26,8 +27,17 @@
         function loveCalculate(){
            let your_name= document.querySelector('.your_name').value;
            let your_love_name= document.querySelector('.your_love_name').value;
+           
            if(your_name && your_love_name){
-
+                let total=Math.floor(Math.random()*100)
+                let str=(your_name+your_love_name).replace(/\s/g,"")
+                console.log(str)
+                if(localStorage.getItem(str)){
+                    total=localStorage.getItem(str)
+                }else{
+                    localStorage.getItem(str,total)
+                }
+                document.querySelector('.result').innerText=total;
            }else{
                 alert('Please Enter Valid Name')
            }
