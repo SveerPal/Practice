@@ -20,10 +20,7 @@
 
         }
 
-        .animation {
-            animation: jump 500ms infinite linear;
-        }
-
+        
         .stone {
             width: 20px;
             height: 20px;
@@ -31,8 +28,14 @@
             top: 430px;
             left: 480px;
             position: relative;
+        }
+        .animation {
+            animation: jump 500ms infinite linear;
+        }
+        .animationStone {
             animation: stone 2s infinite linear;
         }
+
 
         @keyframes stone {
             0% {
@@ -75,8 +78,18 @@
         let character=document.querySelector('.character')
         let stone=document.querySelector('.stone')
         function jump() {
-            character.classList.add='animation'
+            character.classList.add('animation')
+            setTimeout(function(){
+                character.classList.remove('animation')
+            },500)
         }
+        let accident=setInterval(function(){
+            let charPos=parseInt( window.getComputedStyle(character).getPropertyValue('top'))
+            let stonePos=parseInt(window.getComputedStyle(stone).getPropertyValue('left'))
+            if(charPos>420 && (stonePos<40 && stonePos>0))
+               // console.log(charPos)
+            alert("Game Over")
+        },20)
     </script>
 </body>
 
