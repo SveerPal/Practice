@@ -1,16 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chrome Game</title>
+    <style>
+        .game {
+            height: 500px;
+            width: 500px;
+            border: 1px solid #333
+        }
+
+        .character {
+            height: 50px;
+            width: 40px;
+            position: relative;
+            top: 450px;
+
+        }
+
+        .animation {
+            animation: jump 500ms infinite linear;
+        }
+
+        .stone {
+            width: 20px;
+            height: 20px;
+            background-color: #ff0000;
+            top: 430px;
+            left: 480px;
+            position: relative;
+            animation: stone 2s infinite linear;
+        }
+
+        @keyframes stone {
+            0% {
+                left: 490px;
+            }
+
+            100% {
+                left: -40px
+            }
+        }
+
+        @keyframes jump {
+            0% {
+                top: 450px;
+            }
+
+            40% {
+                top: 350px
+            }
+
+            60% {
+                top: 350px
+            }
+
+            100% {
+                top: 450px
+            }
+        }
+    </style>
 </head>
-<body>
+
+<body onclick="jump()">
     <div class="game" id="game">
-        <img src="" alt="" class="character">
+        <img src="./bike-ride.gif" alt="" class="character">
+        <div class="stone">
+
+        </div>
     </div>
-    <div class="stone">
-        
-    </div>
+    <script>
+        let character=document.querySelector('.character')
+        let stone=document.querySelector('.stone')
+        function jump() {
+            character.classList.add='animation'
+        }
+    </script>
 </body>
+
 </html>
