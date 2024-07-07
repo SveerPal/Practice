@@ -79,6 +79,7 @@
         let stone=document.querySelector('.stone')
         function jump() {
             character.classList.add('animation')
+            stone.classList.add('animationStone')
             setTimeout(function(){
                 character.classList.remove('animation')
             },500)
@@ -86,9 +87,12 @@
         let accident=setInterval(function(){
             let charPos=parseInt( window.getComputedStyle(character).getPropertyValue('top'))
             let stonePos=parseInt(window.getComputedStyle(stone).getPropertyValue('left'))
-            if(charPos>420 && (stonePos<40 && stonePos>0))
+            if(charPos>420 && (stonePos<40 && stonePos>0)){
+                stone.classList.remove('animationStone')
+                alert("Game Over")
+            }
                // console.log(charPos)
-            alert("Game Over")
+           
         },20)
     </script>
 </body>
