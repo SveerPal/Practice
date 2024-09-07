@@ -1,42 +1,42 @@
 .DS_Store
-yash/vue/practice/node_modules
-yash/vue/practice/dist
+ node_modules
+ #dist
 
-yash/Portfolio/node_modules
+vendor
+storage/*.key
+public/storage
+env
 
-yash/Practice/Live/Express/Auth1/node_modules
-yash/Practice/Live/Express/Authsystem/node_modules
-yash/Practice/Live/Express/CloudinaryFileUpload/node_modules
-yash/Practice/Live/Express/FirstProject/node_modules
-yash/Practice/Live/React/React/node_modules
+#yash/Practice/Live/Express/Auth1/node_modules
+
 
 
 #yash/laravel
-yash/laravel/laravelvuejs/vendor/
-yash/laravel/laravelvuejs/node_modules/
-yash/laravel/laravelvuejs/npm-debug.log
-yash/laravel/laravelvuejs/yarn-error.log
-yash/laravel/laravelvuejs/storage/*.key
-yash/laravel/laravelvuejs/.env
+# yash/laravel/laravelvuejs/vendor/
+# yash/laravel/laravelvuejs/node_modules/
+# yash/laravel/laravelvuejs/npm-debug.log
+# yash/laravel/laravelvuejs/yarn-error.log
+# yash/laravel/laravelvuejs/storage/*.key
+# yash/laravel/laravelvuejs/.env
 
-yash/laravel/laravel-event-example
+# yash/laravel/laravel-event-example
 
 
-yash/laravel/ecommerce-app/node_modules
-yash/laravel/ecommerce-app/public/hot
-yash/laravel/ecommerce-app/public/storage
-yash/laravel/ecommerce-app/storage/*.key
-yash/laravel/ecommerce-app/vendor
-yash/laravel/ecommerce-app/.env
-yash/laravel/ecommerce-app/.env.backup
-yash/laravel/ecommerce-app/.phpunit.result.cache
-yash/laravel/ecommerce-app/docker-compose.override.yml
-yash/laravel/ecommerce-app/Homestead.json
-yash/laravel/ecommerce-app/Homestead.yaml
-yash/laravel/ecommerce-app/npm-debug.log
-yash/laravel/ecommerce-app/yarn-error.log
-yash/laravel/ecommerce-app/.idea
-yash/laravel/ecommerce-app/.vscode
+# yash/laravel/ecommerce-app/node_modules
+# yash/laravel/ecommerce-app/public/hot
+# yash/laravel/ecommerce-app/public/storage
+# yash/laravel/ecommerce-app/storage/*.key
+# yash/laravel/ecommerce-app/vendor
+# yash/laravel/ecommerce-app/.env
+# yash/laravel/ecommerce-app/.env.backup
+# yash/laravel/ecommerce-app/.phpunit.result.cache
+# yash/laravel/ecommerce-app/docker-compose.override.yml
+# yash/laravel/ecommerce-app/Homestead.json
+# yash/laravel/ecommerce-app/Homestead.yaml
+# yash/laravel/ecommerce-app/npm-debug.log
+# yash/laravel/ecommerce-app/yarn-error.log
+# yash/laravel/ecommerce-app/.idea
+# yash/laravel/ecommerce-app/.vscode
 
 
 
