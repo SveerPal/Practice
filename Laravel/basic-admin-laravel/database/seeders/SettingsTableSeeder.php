@@ -32,10 +32,6 @@ class SettingsTableSeeder extends Seeder
             'value'                     =>  '£',
         ],
         [
-            'key'                       =>  'country_code',
-            'value'                     =>  '£',
-        ],
-        [
             'key'                       =>  'site_logo',
             'value'                     =>  '',
         ],
@@ -92,14 +88,6 @@ class SettingsTableSeeder extends Seeder
             'value'                     =>  '',
         ],
         [
-            'key'                       =>  'stripe_webhook_key',
-            'value'                     =>  '',
-        ],
-        [
-            'key'                       =>  'stripe_webhook',
-            'value'                     =>  '',
-        ],
-        [
             'key'                       =>  'paypal_payment_method',
             'value'                     =>  '',
         ],
@@ -109,14 +97,6 @@ class SettingsTableSeeder extends Seeder
         ],
         [
             'key'                       =>  'paypal_secret_id',
-            'value'                     =>  '',
-        ],
-        [
-            'key'                       =>  'paypal_webhook_key',
-            'value'                     =>  '',
-        ],
-        [
-            'key'                       =>  'paypal_webhook',
             'value'                     =>  '',
         ],
         [

@@ -18,40 +18,30 @@ class RedirectIfAuthenticated
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
 
-    // public function handle(Request $request, Closure $next, ...$guards)
-    // {
-    //     $guards = empty($guards) ? [null] : $guards;
-
-    //     foreach ($guards as $guard) {
-    //         if (Auth::guard($guard)->check()) {
-    //             return redirect(RouteServiceProvider::HOME);
-    //         }
-    //     }
-
-    //     return $next($request);
-    // }
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @param  string|null  $guard
-     * @return mixed
-     */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle(Request $request, Closure $next, ...$guards)
     {
-        switch ($guard) {
-            case 'admin':
-                if (Auth::guard($guard)->check()) {
-                    return redirect('/admin');
-                }
-                break;
-            default:
-                if (Auth::guard($guard)->check()) {
-                    return redirect('/');
-                }
-                break;
+        $guards = empty($guards) ? [null] : $guards;
+
+        foreach ($guards as $guard) {
+            switch ($guard) {
+                case 'admin':
+                    if (Auth::guard($guard)->check()) {
+                        return redirect('/admin');
+                    }
+                    break;
+                default:
+                    if (Auth::guard($guard)->check()) {
+                        return redirect('/');
+                    }
+                    break;
+            }
+            // if (Auth::guard($guard)->check()) {
+            //     return redirect(RouteServiceProvider::HOME);
+            // }
         }
+
         return $next($request);
     }
+   
+    
 }

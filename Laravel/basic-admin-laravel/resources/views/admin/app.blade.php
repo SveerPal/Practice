@@ -12,7 +12,7 @@
 	<link rel="stylesheet" type="text/css"
 		href="{{ asset('backend/css/font-awesome/4.7.0/css/font-awesome.min.css') }}" />
 		@stack('styles')
-		<!-- @vite(['resources/js/app.js', 'resources/css/app.css']) -->
+		{{-- @vite(['resources/js/app.js', 'resources/css/app.css']) --}}
 </head>
 
 <body class="app sidebar-mini">

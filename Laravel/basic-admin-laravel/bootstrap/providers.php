@@ -43,5 +43,5 @@ return [
 
 
     App\Providers\SettingServiceProvider::class,
-    App\Providers\RepositoryServiceProvider::class,
+    //App\Providers\RepositoryServiceProvider::class,
 ];
