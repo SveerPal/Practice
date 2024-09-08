@@ -28,7 +28,7 @@ class Setting extends Model
 
     /**
      * @param $key
-     * @param null $value
+     * @param mixed | null $value
      * @return bool
      */
     public static function set($key, $value = null)
