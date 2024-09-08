@@ -32,6 +32,10 @@ class SettingsTableSeeder extends Seeder
             'value'                     =>  '£',
         ],
         [
+            'key'                       =>  'country_code',
+            'value'                     =>  '£',
+        ],
+        [
             'key'                       =>  'site_logo',
             'value'                     =>  '',
         ],
@@ -77,7 +81,11 @@ class SettingsTableSeeder extends Seeder
         ],
         [
             'key'                       =>  'stripe_payment_method',
-            'value'                     =>  '',
+            'value'                     =>  'disable',
+        ],
+        [
+            'key'                       =>  'stripe_payment_type',
+            'value'                     =>  'sandbox',
         ],
         [
             'key'                       =>  'stripe_key',
@@ -88,8 +96,20 @@ class SettingsTableSeeder extends Seeder
             'value'                     =>  '',
         ],
         [
-            'key'                       =>  'paypal_payment_method',
+            'key'                       =>  'stripe_webhook_key',
             'value'                     =>  '',
+        ],
+        [
+            'key'                       =>  'stripe_webhook_url',
+            'value'                     =>  '',
+        ],
+        [
+            'key'                       =>  'paypal_payment_method',
+            'value'                     =>  'disable',
+        ],
+        [
+            'key'                       =>  'paypal_payment_type',
+            'value'                     =>  'sandbox',
         ],
         [
             'key'                       =>  'paypal_client_id',
@@ -97,6 +117,14 @@ class SettingsTableSeeder extends Seeder
         ],
         [
             'key'                       =>  'paypal_secret_id',
+            'value'                     =>  '',
+        ],
+        [
+            'key'                       =>  'paypal_webhook_key',
+            'value'                     =>  '',
+        ],
+        [
+            'key'                       =>  'paypal_webhook_url',
             'value'                     =>  '',
         ],
         [

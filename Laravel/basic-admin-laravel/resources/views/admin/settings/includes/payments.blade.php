@@ -63,6 +63,28 @@
                     value="{{ config('settings.paypal_secret_id') }}"
                 />
             </div>
+            <div class="mb-3">
+                <label class="form-label" for="paypal_webhook_key">Paypal Webhook Key</label>
+                <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Enter paypal Webhook key"
+                    id="paypal_webhook_key"
+                    name="paypal_webhook_key"
+                    value="{{ config('settings.paypal_webhook_key') }}"
+                />
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="paypal_webhook_key">Paypal Webhook Url</label>
+                <input
+                    class="form-control"
+                    type="text"
+                    placeholder="Enter paypal webhook Url"
+                    id="paypal_webhook_url"
+                    name="paypal_webhook_url"
+                    value="{{ config('settings.paypal_webhook_url') }}"
+                />
+            </div>
         </div>
         <div class="tile-footer">
             <div class="row d-print-none mt-2">

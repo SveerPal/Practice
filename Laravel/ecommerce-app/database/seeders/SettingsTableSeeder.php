@@ -81,7 +81,11 @@ class SettingsTableSeeder extends Seeder
         ],
         [
             'key'                       =>  'stripe_payment_method',
-            'value'                     =>  '',
+            'value'                     =>  'disable',
+        ],
+        [
+            'key'                       =>  'stripe_payment_type',
+            'value'                     =>  'sandbox',
         ],
         [
             'key'                       =>  'stripe_key',
@@ -96,12 +100,16 @@ class SettingsTableSeeder extends Seeder
             'value'                     =>  '',
         ],
         [
-            'key'                       =>  'stripe_webhook',
+            'key'                       =>  'stripe_webhook_url',
             'value'                     =>  '',
         ],
         [
             'key'                       =>  'paypal_payment_method',
-            'value'                     =>  '',
+            'value'                     =>  'disable',
+        ],
+        [
+            'key'                       =>  'paypal_payment_type',
+            'value'                     =>  'sandbox',
         ],
         [
             'key'                       =>  'paypal_client_id',
@@ -116,7 +124,7 @@ class SettingsTableSeeder extends Seeder
             'value'                     =>  '',
         ],
         [
-            'key'                       =>  'paypal_webhook',
+            'key'                       =>  'paypal_webhook_url',
             'value'                     =>  '',
         ],
         [
