@@ -20,7 +20,7 @@ class BaseController extends Controller
     }
     /**
      * @param int $errorCode
-     * @param null $message
+     * @param mixed | null $message
      * @return \Illuminate\Http\Response
      */
     protected function showErrorPage($errorCode = 404, $message = null)
@@ -31,7 +31,7 @@ class BaseController extends Controller
      * @param bool $error
      * @param int $responseCode
      * @param array $message
-     * @param null $data
+     * @param mixed | null $data
      * @return \Illuminate\Http\JsonResponse
      */
     protected function responseJson($error = true, $responseCode = 200, $message = [], $data = null)
