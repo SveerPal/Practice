@@ -36,7 +36,7 @@ Route::group(['prefix' => 'admin'], function () {
             });
         });
 
-        // //Product Category
+         //Product Category
         Route::group(['prefix' => 'categories', 'as' => 'admin.categories.'], function () {
             Route::controller(ProductCategoryController::class)->group(function () {
                 Route::get('/', 'index')->name('index');
